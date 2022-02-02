@@ -6,9 +6,13 @@
 #include <stdlib.h>
 
 typedef struct map map;
+struct map
 {
-    int x; //pour les absisses
-    int y; //pour les ordonnées
-}
+    void    *mlx;
+    void    *window;
+    void    *image;
+    int     x; //pour les absisses - les colonnes
+    int     y; //pour les ordonnées - les lignes
+};
 
 #endif
