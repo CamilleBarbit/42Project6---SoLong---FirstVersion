@@ -7,7 +7,8 @@
 
 typedef struct map map;
 {
-    int
+    int x; //pour les absisses
+    int y; //pour les ordonnées
 }
 
 #endif
