@@ -13,6 +13,7 @@ struct map
     void    *image;
     int     x; //pour les absisses - les colonnes
     int     y; //pour les ordonnées - les lignes
+    char    *str_map;
 };
 
 #endif
