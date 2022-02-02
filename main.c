@@ -22,6 +22,8 @@ int main()
     void    *window;
 
     mlx = mlx_init();
+    if (!mlx)
+        return (0);
     window = mlx_new_window(mlx, 400, 400, "First Window!");
     mlx_mouse_hook(window, handle_mouse, 0);
     mlx_key_hook(window, handle_key, 0);
