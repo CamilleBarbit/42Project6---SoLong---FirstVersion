@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/03 11:36:49 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/03 13:10:13 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 #include "minilibx/mlx.h"
+#include "get_next_line/get_next_line.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -25,7 +26,6 @@ struct map
     void        *image;
     int         x; //pour les absisses - les colonnes
     int         y; //pour les ordonnées - les lignes
-    static char *str_map;
 };
 
 #endif
