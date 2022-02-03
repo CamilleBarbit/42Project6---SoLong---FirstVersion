@@ -39,13 +39,15 @@ int ft_recup_map_size(char *file_name)
     return (total_nb_line);
 }
 
-char    **ft_print_map(char *file_name, int nb_line)
+char    **ft_print_map(char *file_name)
 {
     char **str_map;
     int  fd;
     int i;
+    int nb_line:
 
     i = 0;
+    nb_line = ft_recup_map_size(file_name);
     fd = open(file_name, O_RDONLY);
     str_map = malloc(sizeof(char *) * (nb_line + 1));
     if (!str_map)
