@@ -28,4 +28,7 @@ struct map
     int         y; //pour les ordonnées - les lignes
 };
 
+int	ft_check_map_form(char **tab, char *file_name, int size);
+int	ft_check_walls(char **tab, char *file_name, int size);
+
 #endif
