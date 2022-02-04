@@ -1,5 +1,38 @@
 
 #include "so_long.h"
+#include "string.h"
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+		{
+			printf("je suis different");
+			return (1);
+		}
+		i++;
+	}
+	printf("je suis le même");
+	return (0);
+}
+
+int	ft_strchr(char const *string, int c)
+{
+	int	i;
+
+	i = 0;
+	while (string[i])
+	{
+		if (string[i] == (char)c)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int	ft_check_walls(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
 {
@@ -55,6 +88,28 @@ int	ft_check_map_form(char **tab, char *file_name, int size) //je lui envoie le 
 	return (0);
 }
 
+int	ft_check_file_name(char *file_name)
+{
+	int	i;
+	char	*str;
+
+	i = 0;
+	str = ".ber";
+	while (file_name[i])
+	{
+		if (file_name[i] == '.')
+		{
+			if (ft_strcmp(file_name + i, str) == 0)
+			{
+				printf("Bon nom");
+				return (0);
+			}
+		}
+		i++;
+	}
+	printf("Mauvais nom");
+	return (1);
+}
 
 // void	ft_handle_all_errors(char **tab, char *file_name, int size)
 // {
@@ -71,3 +126,11 @@ int	ft_check_map_form(char **tab, char *file_name, int size) //je lui envoie le 
 
 // 	}
 // }
+
+int	main()
+{
+	char	*file_name = "c.bewrwerr";
+
+	ft_check_file_name(file_name);
+	return (0);
+}
