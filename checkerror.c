@@ -6,8 +6,6 @@ int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nomb
 	int	x;
 	int	y;
 
-	if (!tab)
-		return (1);
 	x = 0;
 	while (tab[0][x + 1]) //tant que le caractère à (x + 1) != 0 -> il n'ira pas sur le \n car après il y a un \0
 	{
@@ -32,3 +30,52 @@ int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nomb
 	}
 	return (0);
 }
+
+int	ft_check_map_form(char **tab, char *file_name,int size)
+{
+	int		*tab_len;
+	int		len;
+	int		i;
+	int		y;
+	int		x;
+
+	tab_len = malloc(sizeof(int) * (size + 1));
+	if (!tab_len)
+		return (1);
+	y = 0;
+	x = 0;
+	while (y <= size - 1)
+	{
+		len = (tab[y]);
+		tab_len[i] = len;
+		y++;
+		i++;
+	}
+	tab_len[i]= '\0';
+	i = 0;
+	while (tab[i])
+	{
+		
+	}
+}
+
+
+
+
+
+
+// void	ft_handle_all_errors(char **tab, char *file_name, int size)
+// {
+// 	if (!tab)
+// 		exit (1);
+// 	if (!file_name)
+// 		exit (1);
+// 	if (size < 3)
+// 		exit (1);
+// 	if (!ft_check_walls)
+// 	{
+
+// 	}
+
+// 	}
+// }
