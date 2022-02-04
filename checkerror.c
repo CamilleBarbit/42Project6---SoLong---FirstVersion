@@ -1,37 +1,109 @@
-int	ft_check_walls(char **tab, size) //on lui envoie la map recomposée et sa taille (renvoyée par ft_recup_map_size)
-{
-	int	len;
-	int	i;
+#include "so_long.h"
 
-	i = 0;
-	while (tab)
+int	ft_recup_map_size(char *file_name)
+{
+	char	*line;
+	int		total_nb_line;
+	int		fd;
+
+	if (!file_name)
+		exit (1);
+	total_nb_line = 0;
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+		exit (1);
+	line = get_next_line(fd);
+	while (line)
 	{
-		while (tab[0])
-		{
-			if (tab[0][i] == '1')
-				i++;
-			else
-				return ("there is a problem with your map");
-		}
-		i = 0;
-		while (tab[len - 1])
-		{
-			if (tab[len][i] == '1')
-				i++;
-			else
-				return ("there is a problem with your map");
-		}
-		i = 0;
-		while (tab)
-		{
-			if (tab[0][i] == '1')
-				tab++;
-			else
-				return ("there is a problem with your map");
-			if (tab[0][len - 1] == 1)
-				tab++;
-			else
-				return ("there is a problem with your map");
-		}
+		total_nb_line++;
+		free(line);
+		line = get_next_line(fd);
 	}
+	free(line);
+	close (fd);
+	return (total_nb_line);
+}
+
+char	**ft_print_map(char *file_name)
+{
+	char	**str_map;
+	int		fd;
+	int		i;
+	int		nb_line;
+
+	if (!file_name)
+		exit (1);
+	i = 0;
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+		exit (1);
+	nb_line = ft_recup_map_size(file_name);
+	str_map = malloc(sizeof(char *) * (nb_line + 1));
+	if (!str_map)
+		exit (1);
+	while (nb_line > 0)
+	{
+		str_map[i] = get_next_line(fd);
+		printf("%s", str_map[i]);
+		i++;
+		nb_line--;
+	}
+	str_map[i] = 0;
+	close(fd);
+	return (str_map);
+}
+
+int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nombre de lignes
+{
+	int	x;
+	int	y;
+
+	if (!tab)
+		exit (1);
+	x = 0;
+	y = 1;
+	while (tab[0][x])
+	{
+		if (tab[0][x] != '1')
+		{
+			printf("ici/error\n");
+			exit(1);
+		}
+		x++;
+	}
+		x = 0;
+	while (tab[size - 1][x])
+	{
+		if (tab[size - 1][x] != '1')
+		{
+			printf("encore/error\n");
+			exit(1);
+		}	
+		x++;
+	}
+	while (y < size - 2)
+	{
+		if(tab[y][0] != 1 || tab[y][strlen(tab[y]) - 1] != 1) //strlen est la taille de la string en question - on ne veut pas la taille du tableau
+		{
+			printf("là/error\n");
+			exit(1);
+		}
+		else
+			break;
+	}	
+	printf("all is fine");
+}
+
+int	main()
+{
+	char	**tab;
+	char	*file_name = "map/map.ber";
+	int		size;
+	//int		nb_line;
+
+	size = ft_recup_map_size(file_name);
+	tab = ft_print_map(file_name);
+	//nb_line = ft_recup_map_size(file_name);
+	ft_check_walls(tab, file_name, size);
+	return (0);
 }
