@@ -61,18 +61,18 @@ int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nomb
 	if (!tab)
 		exit (1);
 	x = 0;
-	y = 1;
-	while (tab[0][x])
+	while (tab[0][x + 1]) //tant que le caractère à (x + 1) != 0 -> il n'ira pas sur le \n car après il y a un \0
 	{
 		if (tab[0][x] != '1')
 		{
+			printf("%c", tab[0][x]);
 			printf("ici/error\n");
 			exit(1);
 		}
 		x++;
 	}
-		x = 0;
-	while (tab[size - 1][x])
+	x = 0;
+	while (tab[size - 1][x + 1])
 	{
 		if (tab[size - 1][x] != '1')
 		{
@@ -81,15 +81,19 @@ int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nomb
 		}	
 		x++;
 	}
+	x = strlen(tab[y]); //strlen est la taille de la string en question - on ne veut pas la taille du tableau
+	y = 1;
 	while (y < size - 2)
 	{
-		if(tab[y][0] != 1 || tab[y][strlen(tab[y]) - 1] != 1) //strlen est la taille de la string en question - on ne veut pas la taille du tableau
+		if(tab[y][0] != '1' || tab[y][x - 1] != '1') //je mets x - 2 car avant le \0, il y a un \n
 		{
 			printf("là/error\n");
 			exit(1);
 		}
 		else
 			break;
+		y++;
+		x = strlen(tab[y]);
 	}	
 	printf("all is fine");
 }
