@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 #include "minilibx/mlx.h"
-#include "get_next_line/get_next_line.h"
+//#include "get_next_line/get_next_line.h"
 #include <stdio.h>
 #include <stdlib.h>
 
