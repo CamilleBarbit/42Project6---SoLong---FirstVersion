@@ -1,7 +1,7 @@
 
 #include "so_long.h"
 
-int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nombre de lignes
+int	ft_check_walls(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
 {
 	int	x;
 	int	y;
@@ -31,37 +31,29 @@ int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nomb
 	return (0);
 }
 
-int	ft_check_map_form(char **tab, char *file_name,int size)
+int	ft_check_map_form(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
 {
-	int		*tab_len;
+	int		tempo;
 	int		len;
-	int		i;
 	int		y;
 	int		x;
 
-	tab_len = malloc(sizeof(int) * (size + 1));
-	if (!tab_len)
-		return (1);
-	y = 0;
+	tempo = strlen(tab[0]);
+	y = 1;
 	x = 0;
 	while (y <= size - 1)
 	{
-		len = (tab[y]);
-		tab_len[i] = len;
+		len = strlen(tab[y]);
+		if (len != tempo)
+		{
+			printf("Problème de taille");
+			return (1);
+		}
 		y++;
-		i++;
 	}
-	tab_len[i]= '\0';
-	i = 0;
-	while (tab[i])
-	{
-		
-	}
+	printf("C'est la même taille");
+	return (0);
 }
-
-
-
-
 
 
 // void	ft_handle_all_errors(char **tab, char *file_name, int size)
