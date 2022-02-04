@@ -12,85 +12,89 @@
 
 #include "so_long.h"
 
-int ft_recup_map_size(char *file_name)
+int	ft_recup_map_size(char *file_name)
 {
-    char    *line;
-    int     total_nb_line;
-    int     fd;
+	char	*line;
+	int		total_nb_line;
+	int		fd;
 
-    total_nb_line = 0;
-    fd = open(file_name, O_RDONLY);
-    if (fd < 0)
-        exit (1);
-    line = get_next_line(fd);
-    while (line)
-    {
-        total_nb_line++;
-        free(line);
-        line = get_next_line(fd);
-    }
-    free(line);
-    close (fd);
-    return (total_nb_line);
+	if (!file_name)
+		exit (1);
+	total_nb_line = 0;
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+		exit (1);
+	line = get_next_line(fd);
+	while (line)
+	{
+		total_nb_line++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	free(line);
+	close (fd);
+	return (total_nb_line);
 }
 
-char    **ft_print_map(char *file_name)
+char	**ft_print_map(char *file_name)
 {
-    char **str_map;
-    int  fd;
-    int i;
-    int nb_line;
+	char	**str_map;
+	int		fd;
+	int		i;
+	int		nb_line;
 
-    i = 0;
-    fd = open(file_name, O_RDONLY);
-    if (fd < 0)
-        exit (1);
-    nb_line = ft_recup_map_size(file_name);
-    str_map = malloc(sizeof(char *) * (nb_line + 1)); 
-    if (!str_map)
-        exit (1);
-    while (nb_line > 0)
-    {
-        str_map[i] = get_next_line(fd);
-        printf("%s", str_map[i]);
-        i++;
-        nb_line--;
-    }
-    str_map[i] = 0;
-    close(fd);
-    return (str_map);
+	if (!file_name)
+		exit (1);
+	i = 0;
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+		exit (1);
+	nb_line = ft_recup_map_size(file_name);
+	str_map = malloc(sizeof(char *) * (nb_line + 1));
+	if (!str_map)
+		exit (1);
+	while (nb_line > 0)
+	{
+		str_map[i] = get_next_line(fd);
+		printf("%s", str_map[i]);
+		i++;
+		nb_line--;
+	}
+	str_map[i] = 0;
+	close(fd);
+	return (str_map);
 }
 
-void    putstr(char *str)
-{
-    int i;
+// void	putstr(char *str)
+// {
+// 	int i;
 
-    i = 0;
-    while (str[i])
-    {
-        write(1, str, strlen(str));
-        i++;
-    }
-}
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		write(1, str, strlen(str));
+// 		i++;
+// 	}
+// }
 
-int main()
-{
-    // int     fd;
-    // int     nb;
-    int     index;
-    char    **tab;
+// int main()
+// {
+// 	// int     fd;
+// 	// int     nb;
+// 	int     index;
+// 	char    **tab;
 
-    // fd = open("map/map.ber", O_RDONLY);
-    // printf("%d", ft_recup_map_size(fd));
-    // return (0);
+// 	// fd = open("map/map.ber", O_RDONLY);
+// 	// printf("%d", ft_recup_map_size(fd));
+// 	// return (0);
 
-    index = 0;
-    tab = ft_print_map("map/map.ber");
-    while (tab[index])
-    {
-        // putstr(tab[index]);
-        // putstr("\n");
-        // index++;
-    }
-    return (0);
-}
+// 	index = 0;
+// 	tab = ft_print_map("map/map.ber");
+// 	while (tab[index])
+// 	{
+// 		// putstr(tab[index]);
+// 		// putstr("\n");
+// 		// index++;
+// 	}
+// 	return (0);
+// }
