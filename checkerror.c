@@ -27,22 +27,8 @@ int	ft_check_walls(char **tab, char *file_name,int size) //je lui envoie le nomb
 	{
 		x = strlen(tab[y]); //strlen est la taille de la string en question - on ne veut pas la taille du tableau
 		if(tab[y][0] != '1' || tab[y][x - 2] != '1') //je mets x - 2 car avant le \0, il y a un \n
-			exit(1);
+			return (1);
 		y++;
 	}
-	return (0);
-}
-
-int	main()
-{
-	char	**tab;
-	char	*file_name = "map/map.ber";
-	int		size;
-	//int		nb_line;
-
-	size = ft_recup_map_size(file_name);
-	tab = ft_print_map(file_name);
-	//nb_line = ft_recup_map_size(file_name);
-	ft_check_walls(tab, file_name, size);
 	return (0);
 }
