@@ -109,6 +109,7 @@ int	main()
 	size = ft_recup_map_size(file_name);
 	tab = ft_print_map(file_name);
 	//nb_line = ft_recup_map_size(file_name);
-	ft_check_walls(tab, file_name, size);
+	//ft_check_walls(tab, file_name, size);
+	ft_check_map_form(tab, file_name, size);
 	return (0);
 }
