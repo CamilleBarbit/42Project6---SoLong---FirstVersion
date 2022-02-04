@@ -12,31 +12,26 @@
 
 #include "so_long.h"
 
-int ft_recup_map_size(char *file_name)
+int ft_recup_map_size(int fd)
 {
     char    *line;
     int     total_nb_line;
-    int     fd;
+    // int     fd;
 
     total_nb_line = 0;
-    fd = open(file_name, O_RDONLY);
+    // fd = open(file_name, O_RDONLY);
     if (fd < 0)
-    {
-        printf("There is an error with the file descriptor");
         exit (1);
-    }
-    else
+    
+    line = get_next_line(fd);
+    while (line)
     {
+        total_nb_line++;
+        free(line);
         line = get_next_line(fd);
-        while (line)
-        {
-            total_nb_line++;
-            free(line);
-            line = get_next_line(fd);
-        }
-        close(fd);
     }
-    return (total_nb_line);
+    close(fd);
+return (total_nb_line);
 }
 
 char    **ft_print_map(char *file_name)
@@ -44,39 +39,67 @@ char    **ft_print_map(char *file_name)
     char **str_map;
     int  fd;
     int i;
-    int nb_line:
+    int nb_line;
 
     i = 0;
-    nb_line = ft_recup_map_size(file_name);
     fd = open(file_name, O_RDONLY);
+    nb_line = ft_recup_map_size(fd);
+    if (fd < 0)
+        exit (1);
     str_map = malloc(sizeof(char *) * (nb_line + 1));
     if (!str_map)
         exit (1);
-    while (nb_line)
+    while (nb_line > 0)
     {
+        // printf("coucou, je rentre là\n");
         str_map[i] = get_next_line(fd);
         i++;
     }
-    str_map[i] = '\0';
+    str_map[i] = 0;
     close(fd);
     return (str_map);
 }
 
+// int strlen(char *str)
+// {
+//     int i;
+    
+//     i = 0;
+//     while (str[i])
+//         i++;
+//     return (i);
+// }
+
+// void    putstr(char *str)
+// {
+//     int i;
+
+//     i = 0;
+//     while (str[i])
+//     {
+//         write(1, str, strlen(str));
+//         i++;
+//     }
+// }
+
 int main()
 {
-    int i;
-    int j;
-    char **tab;
+    int     fd;
+    int     nb;
 
-    j = 0;
-    i = ft_recup_map_size("map/map.ber");
-    printf("%d", i);
-    while (tab)
-    {
-        tab[j] = ft_print_map("map/map.ber", i);
-        printf("%s", tab[j]);
-        j++;
-    }
-    
 
+    fd = open("map/map.ber", O_RDONLY);
+    printf("%d", ft_recup_map_size(fd));
+    return (0);
+    // char    **tab;
+
+    // index = 0;
+    // // i = ft_recup_map_size("map/map.ber");
+    // // printf("%d", i);
+    // tab = ft_print_map("map/map.ber");
+    // while (tab)
+    // {
+    //     printf("%s\n", tab[index]);
+    //     index++;
+    // }
 }
