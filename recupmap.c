@@ -51,7 +51,7 @@ char	**ft_print_map(char *file_name)
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		exit (1);
-	nb_line = ft_recup_map_size(file_name);
+	nb_line = ft_recup_map_size(file_name); //si nb_line < 3, alors il y a une erreur
 	str_map = malloc(sizeof(char *) * (nb_line + 1));
 	if (!str_map)
 		exit (1);
@@ -66,7 +66,6 @@ char	**ft_print_map(char *file_name)
 	close(fd);
 	return (str_map);
 }
-
 
 // int main()
 // {
@@ -99,6 +98,7 @@ int	main()
 
 	size = ft_recup_map_size(file_name);
 	tab = ft_print_map(file_name);
+	check_map_char(tab, size);
 	//nb_line = ft_recup_map_size(file_name);
 	//ft_check_walls(tab, file_name, size);
 	return (0);
