@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/07 17:10:44 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/07 19:05:55 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int	ft_check_file_name(char *file_name)
 	return(write(1, "Error\nProblem with file name\n", 28), 1);
 }
 
-// int	main()
-// {
-// 	char	*file_name = "hello.ber.ber";
+int	main()
+{
+	char	*file_name = "hello.txt.ber"; //gérer cette erreur
 
-// 	ft_check_file_name(file_name);
-// 	return (0);
-// }
+	ft_check_file_name(file_name);
+	return (0);
+}
