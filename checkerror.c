@@ -20,19 +20,6 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int	ft_strchr(char const *string, int c)
-{
-	int	i;
-
-	i = 0;
-	while (string[i])
-	{
-		if (string[i] == (char)c)
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 int	ft_check_walls(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
 {
@@ -129,7 +116,7 @@ int	ft_check_file_name(char *file_name)
 
 int	main()
 {
-	char	*file_name = "c.bewrwerr";
+	char	*file_name = "";
 
 	ft_check_file_name(file_name);
 	return (0);
