@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/03 11:34:19 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/07 15:45:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int handle_mouse(int keycode, void *param)
     return (0);
 }
 
-int handle_key(int keycode, void *param)
+int handle_key(int keycode, void *param) //handle echap
 {
-    // printf("the keycode is: %d\n", keycode);
     if (keycode == 65307)
         exit(1);
     return (0);
