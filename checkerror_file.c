@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checkerror_file.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
+/*   Updated: 2022/02/07 17:09:08 by cbarbit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 #include "string.h"
 
@@ -9,13 +21,9 @@ int	ft_strcmp(char *s1, char *s2)
 	while (s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
-		{
-			printf("je suis different");
 			return (1);
-		}
 		i++;
 	}
-	printf("je suis le même");
 	return (0);
 }
 
@@ -30,22 +38,18 @@ int	ft_check_file_name(char *file_name)
 	{
 		if (file_name[i] == '.')
 		{
-			if (ft_strcmp(file_name + i, str) == 0)
-			{
-				printf("Bon nom");
+			if (ft_strcmp(file_name + i, str) == 0 && file_name[i + 4] == '\0')
 				return (0);
-			}
 		}
 		i++;
 	}
-	printf("Mauvais nom");
-	return (1);
+	return(write(1, "Error\nProblem with file name\n", 28), 1);
 }
 
-int	main()
-{
-	char	*file_name = "";
+// int	main()
+// {
+// 	char	*file_name = "hello.ber.ber";
 
-	ft_check_file_name(file_name);
-	return (0);
-}
+// 	ft_check_file_name(file_name);
+// 	return (0);
+// }
