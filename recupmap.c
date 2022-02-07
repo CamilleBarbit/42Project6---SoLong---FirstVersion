@@ -12,6 +12,8 @@
 
 #include "so_long.h"
 
+// Pourquoi ne pas déclarer la size de mon char ** en variable globale?
+
 int	ft_recup_map_size(char *file_name)
 {
 	char	*line;
@@ -65,17 +67,6 @@ char	**ft_print_map(char *file_name)
 	return (str_map);
 }
 
-// void	putstr(char *str)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (str[i])
-// 	{
-// 		write(1, str, strlen(str));
-// 		i++;
-// 	}
-// }
 
 // int main()
 // {
@@ -110,6 +101,5 @@ int	main()
 	tab = ft_print_map(file_name);
 	//nb_line = ft_recup_map_size(file_name);
 	//ft_check_walls(tab, file_name, size);
-	ft_check_map_form(tab, file_name, size);
 	return (0);
 }
