@@ -68,7 +68,7 @@ int	check_map_char(char **tab, int size)
 	count_e = 0;
 	count_p = 0;
 	count_item = 0;
-	while (y < size - 2)
+	while (y <= size - 2)
 	{
 		while (tab[y][x])
 		{
@@ -80,16 +80,13 @@ int	check_map_char(char **tab, int size)
 				count_item += 1;
 			x++;
 		}
+		x = 0;
 		y++;
 	}
 	if (count_item < 1 || count_e < 1 || count_p != 1)
-	{
-		printf("Error");
 		return (1);
-	}
-	return (0);	
+	return (0);
 }
-
 
 
 // void	ft_handle_all_errors(char **tab, char *file_name, int size)
