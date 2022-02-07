@@ -6,12 +6,25 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/07 19:17:34 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/07 19:32:30 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "string.h"
+
+void	ft_free_map(char **tab, int size)
+{
+	int	y;
+
+	y = 0;
+	while (y < size)
+	{
+		free(tab[y]);
+		y++;
+	}
+	free(tab);
+}
 
 int	ft_check_map_walls(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
 {
@@ -43,7 +56,7 @@ int	ft_check_map_walls(char **tab, char *file_name, int size) //je lui envoie le
 	return (0);
 }
 
-int	ft_check_map_form(char **tab, int size) //je lui envoie le nombre de lignes
+int	ft_check_map_form(char **tab, int size)
 {
 	int		tempo;
 	int		len;
@@ -57,58 +70,49 @@ int	ft_check_map_form(char **tab, int size) //je lui envoie le nombre de lignes
 	{
 		len = strlen(tab[y]);
 		if (len != tempo)
-			return (write(1, "Error\nThe lengths are not the same!\n", 33), 1);
+			return (write(1, "Error\nString lengths are not the same!\n", 33), 1);
 		y++;
 	}
 	return (0);
 }
 
-
-void	ft_free_map(char **tab, int size)
+static int	ft_count_char(char *str, char c)
 {
-	int	y;
+	int	i;
+	int	count;
 
-	y = 0;
-	while (y < size)
+	i = 0;
+	count = 0;
+	if (!str)
+		return (1);
+	while (str[i])
 	{
-		free(tab[y]);
-		y++;
+		if (str[i] == c)
+			count += 1;
+		i++;
 	}
-	free(tab);
+	return (count);
 }
 
-// int	check_map_char(char **tab, int size)
-// {
-// 	int	x;
-// 	int	y;
-// 	int	count_p;
-// 	int	count_e;
-// 	int	count_item;
+int	ft_check_map_char(char **tab, int size)
+{
+	int	x;
+	int	y;
+	int	tab_count[3] = {0, 0, 0};
 
-// 	x = 0;
-// 	y = 1; //je ne vais pas vérifier ni la prem., ni la der. ligne car elles doivent contenir que des 1
-// 	count_e = 0;
-// 	count_p = 0;
-// 	count_item = 0;
-// 	while (y <= size - 2)
-// 	{
-// 		while (tab[y][x])
-// 		{
-// 			if (tab[y][x] == 'P')
-// 				count_p += 1;
-// 			if (tab[y][x] == 'E')
-// 				count_e += 1;
-// 			if(tab[y][x] == 'C')
-// 				count_item += 1;
-// 			x++;
-// 		}
-// 		x = 0;
-// 		y++;
-// 	}
-// 	if (count_item < 1 || count_e < 1 || count_p != 1)
-// 		return (write(1, "Error\nSome characters are missing!\n", 34), 1);
-// 	return (0);
-// }
+	x = 0;
+	y = 1;
+	while (y <= size - 2)
+	{
+		tab_count[0] += ft_count_char(tab[y], 'P');
+		tab_count[1] += ft_count_char(tab[y], 'C');
+		tab_count[2] += ft_count_char(tab[y], 'E');
+		y++;
+	}
+	if (tab_count[0] != 1 || tab_count[1] < 1 || tab_count[2] < 1)
+		return (write(1, "Error\nSome characters are missing!\n", 34), 1);
+	return (0);
+}
 
 
 // void	ft_handle_all_errors(char **tab, char *file_name, int size)
