@@ -41,3 +41,11 @@ int	ft_check_file_name(char *file_name)
 	printf("Mauvais nom");
 	return (1);
 }
+
+int	main()
+{
+	char	*file_name = "";
+
+	ft_check_file_name(file_name);
+	return (0);
+}
