@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/07 19:44:54 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/07 19:53:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
+int ft_len(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
+}
+
 int	ft_check_file_name(char *file_name)
 {
 	int	i;
@@ -41,7 +51,7 @@ int	ft_check_file_name(char *file_name)
 		if (file_name[i] == '.' && count == 0)
 		{
             count = 1;
-			if (ft_strcmp(file_name + i, str) == 0  && file_name[i + 4] == '\0')
+			if (ft_strcmp(file_name + i, str) == 0  && file_name[i + 4] == '\0' && ft_len(file_name) > 4)
 				    return (write(1, "c bon\n", 6), 0);
 		}
 		i++;
@@ -51,7 +61,7 @@ int	ft_check_file_name(char *file_name)
 
 int	main()
 {
-	char	*file_name = ".ber"; //gérer cette erreur
+	char	*file_name = ".ber"; //problème réglé!
 
 	ft_check_file_name(file_name);
 	return (0);
