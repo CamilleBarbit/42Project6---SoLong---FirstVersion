@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/07 17:43:39 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/07 19:36:26 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,46 +67,6 @@ char	**ft_print_map(char *file_name)
 	return (str_map);
 }
 
-int	ft_count_char(char *str, char c)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	if (!str)
-		return (1);
-	while (str[i])
-	{
-		if (str[i] == c)
-			count += 1;
-		i++;
-	}
-	return (count);
-}
-
-int	ft_check_map_char(char **tab, int size)
-{
-	int	x;
-	int	y;
-	int	*tab_count[3] = {0, 0, 0};
-
-	x = 0;
-	y = 1;
-	while (y <= size - 2)
-	{
-		tab_count[0] += ft_count_char(tab[y], 'P');
-		tab_count[1] += ft_count_char(tab[y], 'C');
-		tab_count[2] += ft_count_char(tab[y], 'E');
-		y++;
-	}
-	printf("PP %d\n", tab_count[0]);
-	printf("CC %d\n", tab_count[1]);
-	printf("EE %d\n", tab_count[2]);
-	if (tab_count[0] != 1 || tab_count[1] < 1 || tab_count[2] < 1)
-		return (write(1, "Error\nSome characters are missing!\n", 34), 1);
-	return (write(1, "TOTO BEN\n", 9), 0);
-}
 
 // int main()
 // {
