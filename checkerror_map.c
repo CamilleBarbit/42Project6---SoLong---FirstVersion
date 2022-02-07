@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checkerror_map.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
+/*   Updated: 2022/02/07 17:28:18 by cbarbit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 #include "string.h"
 
@@ -10,14 +22,14 @@ int	ft_check_map_walls(char **tab, char *file_name, int size) //je lui envoie le
 	while (tab[0][x + 1]) //tant que le caractère à (x + 1) != 0 -> il n'ira pas sur le \n car après il y a un \0
 	{
 		if (tab[0][x] != '1')
-			return (1);
+			return (write(1, "Error\nWalls are missing!\n", 25), 1);
 		x++;
 	}
 	x = 0;
 	while (tab[size - 1][x + 1])
 	{
 		if (tab[size - 1][x] != '1')
-			return (1);
+			return (write(1, "Error\nWalls are missing!\n", 25), 1);
 		x++;
 	}
 	y = 1;
@@ -25,7 +37,7 @@ int	ft_check_map_walls(char **tab, char *file_name, int size) //je lui envoie le
 	{
 		x = strlen(tab[y]); //strlen est la taille de la string en question - on ne veut pas la taille du tableau
 		if(tab[y][0] != '1' || tab[y][x - 2] != '1') //je mets x - 2 car avant le \0, il y a un \n
-			return (1);
+			return (write(1, "Error\nWalls are missing!\n", 25), 1);
 		y++;
 	}
 	return (0);
@@ -45,48 +57,82 @@ int	ft_check_map_form(char **tab, int size) //je lui envoie le nombre de lignes
 	{
 		len = strlen(tab[y]);
 		if (len != tempo)
-		{
-			printf("Problème de taille");
-			return (1);
-		}
+			return (write(1, "Error\nThe lengths are not the same!\n", 33), 1);
 		y++;
 	}
-	printf("C'est la même taille");
 	return (0);
 }
 
-int	check_map_char(char **tab, int size)
+int	ft_count_char(char *str, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	if (!str)
+		return (1);
+	while (str[i])
+	{
+		if (i == c)
+			count +=1;
+		i++;
+	}
+	return (count);
+}
+
+int	ft_check_map_char(char **tab, int size)
 {
 	int	x;
 	int	y;
-	int	count_p;
-	int	count_e;
-	int	count_item;
+	int	*tab_count[3];
 
 	x = 0;
-	y = 1; //je ne vais pas vérifier ni la prem., ni la der. ligne car elles doivent contenir que des 1
-	count_e = 0;
-	count_p = 0;
-	count_item = 0;
+	y = 1;
 	while (y <= size - 2)
 	{
-		while (tab[y][x])
-		{
-			if (tab[y][x] == 'P')
-				count_p += 1;
-			if (tab[y][x] == 'E')
-				count_e += 1;
-			if(tab[y][x] == 'C')
-				count_item += 1;
-			x++;
-		}
-		x = 0;
+		tab_count[0] += ft_count_char(tab[y], 'P');
+		tab_count[1] += ft_count_char(tab[y], 'C');
+		tab_count[2] += ft_count_char(tab[y], 'E');
 		y++;
 	}
-	if (count_item < 1 || count_e < 1 || count_p != 1)
-		return (1);
+	if (tab_count[0] ! 1 || tab_count[1] < 1 || tab_count[2] < 1)
+		return (write(1, "Error\nSome characters are missing!\n", 34), 1);
 	return (0);
 }
+
+// int	check_map_char(char **tab, int size)
+// {
+// 	int	x;
+// 	int	y;
+// 	int	count_p;
+// 	int	count_e;
+// 	int	count_item;
+
+// 	x = 0;
+// 	y = 1; //je ne vais pas vérifier ni la prem., ni la der. ligne car elles doivent contenir que des 1
+// 	count_e = 0;
+// 	count_p = 0;
+// 	count_item = 0;
+// 	while (y <= size - 2)
+// 	{
+// 		while (tab[y][x])
+// 		{
+// 			if (tab[y][x] == 'P')
+// 				count_p += 1;
+// 			if (tab[y][x] == 'E')
+// 				count_e += 1;
+// 			if(tab[y][x] == 'C')
+// 				count_item += 1;
+// 			x++;
+// 		}
+// 		x = 0;
+// 		y++;
+// 	}
+// 	if (count_item < 1 || count_e < 1 || count_p != 1)
+// 		return (write(1, "Error\nSome characters are missing!\n", 34), 1);
+// 	return (0);
+// }
 
 
 // void	ft_handle_all_errors(char **tab, char *file_name, int size)
