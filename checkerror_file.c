@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/07 19:05:55 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/07 19:44:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,18 @@ int	ft_check_file_name(char *file_name)
 {
 	int	i;
 	char	*str;
+    int     count;
 
 	i = 0;
 	str = ".ber";
+    count = 0;
 	while (file_name[i])
 	{
-		if (file_name[i] == '.')
+		if (file_name[i] == '.' && count == 0)
 		{
-			if (ft_strcmp(file_name + i, str) == 0 && file_name[i + 4] == '\0')
-				return (0);
+            count = 1;
+			if (ft_strcmp(file_name + i, str) == 0  && file_name[i + 4] == '\0')
+				    return (write(1, "c bon\n", 6), 0);
 		}
 		i++;
 	}
@@ -48,7 +51,7 @@ int	ft_check_file_name(char *file_name)
 
 int	main()
 {
-	char	*file_name = "hello.txt.ber"; //gérer cette erreur
+	char	*file_name = ".ber"; //gérer cette erreur
 
 	ft_check_file_name(file_name);
 	return (0);
