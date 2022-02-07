@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/07 17:28:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/07 19:17:34 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,42 +63,18 @@ int	ft_check_map_form(char **tab, int size) //je lui envoie le nombre de lignes
 	return (0);
 }
 
-int	ft_count_char(char *str, char c)
-{
-	int	i;
-	int	count;
 
-	i = 0;
-	count = 0;
-	if (!str)
-		return (1);
-	while (str[i])
-	{
-		if (i == c)
-			count +=1;
-		i++;
-	}
-	return (count);
-}
-
-int	ft_check_map_char(char **tab, int size)
+void	ft_free_map(char **tab, int size)
 {
-	int	x;
 	int	y;
-	int	*tab_count[3];
 
-	x = 0;
-	y = 1;
-	while (y <= size - 2)
+	y = 0;
+	while (y < size)
 	{
-		tab_count[0] += ft_count_char(tab[y], 'P');
-		tab_count[1] += ft_count_char(tab[y], 'C');
-		tab_count[2] += ft_count_char(tab[y], 'E');
+		free(tab[y]);
 		y++;
 	}
-	if (tab_count[0] ! 1 || tab_count[1] < 1 || tab_count[2] < 1)
-		return (write(1, "Error\nSome characters are missing!\n", 34), 1);
-	return (0);
+	free(tab);
 }
 
 // int	check_map_char(char **tab, int size)
