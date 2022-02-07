@@ -1,8 +1,7 @@
-
 #include "so_long.h"
 #include "string.h"
 
-int	ft_check_walls(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
+int	ft_check_map_walls(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
 {
 	int	x;
 	int	y;
@@ -32,7 +31,7 @@ int	ft_check_walls(char **tab, char *file_name, int size) //je lui envoie le nom
 	return (0);
 }
 
-int	ft_check_map_form(char **tab, char *file_name, int size) //je lui envoie le nombre de lignes
+int	ft_check_map_form(char **tab, int size) //je lui envoie le nombre de lignes
 {
 	int		tempo;
 	int		len;
@@ -56,6 +55,43 @@ int	ft_check_map_form(char **tab, char *file_name, int size) //je lui envoie le 
 	return (0);
 }
 
+int	check_map_char(char **tab, int size)
+{
+	int	x;
+	int	y;
+	int	count_p;
+	int	count_e;
+	int	count_item;
+
+	x = 0;
+	y = 1; //je ne vais pas vérifier ni la prem., ni la der. ligne car elles doivent contenir que des 1
+	count_e = 0;
+	count_p = 0;
+	count_item = 0;
+	while (y < size - 2)
+	{
+		while (tab[y][x])
+		{
+			if (tab[y][x] == 'P')
+				count_p += 1;
+			if (tab[y][x] == 'E')
+				count_e += 1;
+			if(tab[y][x] == 'C')
+				count_item += 1;
+			x++;
+		}
+		y++;
+	}
+	if (count_item < 1 || count_e < 1 || count_p != 1)
+	{
+		printf("Error");
+		return (1);
+	}
+	return (0);	
+}
+
+
+
 // void	ft_handle_all_errors(char **tab, char *file_name, int size)
 // {
 // 	if (!tab)
@@ -71,11 +107,3 @@ int	ft_check_map_form(char **tab, char *file_name, int size) //je lui envoie le 
 
 // 	}
 // }
-
-int	main()
-{
-	char	*file_name = "";
-
-	ft_check_file_name(file_name);
-	return (0);
-}
