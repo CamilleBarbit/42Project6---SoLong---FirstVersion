@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/03 13:10:13 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/07 16:45:58 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ struct map
     void        *mlx;
     void        *window;
     void        *image;
-    int         x; //pour les absisses - les colonnes
-    int         y; //pour les ordonnées - les lignes
 };
 
 int	ft_check_map_form(char **tab, char *file_name, int size);
