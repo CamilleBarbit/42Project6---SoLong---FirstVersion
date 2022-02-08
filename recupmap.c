@@ -6,13 +6,25 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/07 19:36:26 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/08 10:42:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 // Pourquoi ne pas déclarer la size de mon char ** en variable globale?
+void	ft_free_map(char **tab, int size)
+{
+	int	y;
+
+	y = 0;
+	while (y < size)
+	{
+		free(tab[y]);
+		y++;
+	}
+	free(tab);
+}
 
 int	ft_recup_map_size(char *file_name)
 {
@@ -58,7 +70,7 @@ char	**ft_print_map(char *file_name)
 	while (nb_line > 0)
 	{
 		str_map[i] = get_next_line(fd);
-		//printf("%s", str_map[i]);
+		printf("%s", str_map[i]);
 		i++;
 		nb_line--;
 	}
@@ -67,28 +79,6 @@ char	**ft_print_map(char *file_name)
 	return (str_map);
 }
 
-
-// int main()
-// {
-// 	// int     fd;
-// 	// int     nb;
-// 	int     index;
-// 	char    **tab;
-
-// 	// fd = open("map/map.ber", O_RDONLY);
-// 	// printf("%d", ft_recup_map_size(fd));
-// 	// return (0);
-
-// 	index = 0;
-// 	tab = ft_print_map("map/map.ber");
-// 	while (tab[index])
-// 	{
-// 		// putstr(tab[index]);
-// 		// putstr("\n");
-// 		// index++;
-// 	}
-// 	return (0);
-// }
 
 int	main()
 {
@@ -99,8 +89,9 @@ int	main()
 
 	size = ft_recup_map_size(file_name);
 	tab = ft_print_map(file_name);
-	ft_check_map_char(tab, size);
+	//ft_check_map_char(tab, size);
 	//nb_line = ft_recup_map_size(file_name);
-	//ft_check_walls(tab, file_name, size);
+	ft_check_map_walls(tab, file_name, size);
+	//ft_check_map_form(tab, size);
 	return (0);
 }
