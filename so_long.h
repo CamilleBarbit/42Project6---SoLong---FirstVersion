@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/07 16:45:58 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/08 11:39:53 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ struct map
     void        *image;
 };
 
-int	ft_check_map_form(char **tab, char *file_name, int size);
+// struct  s_bonjour
+// {
+//     char **map;
+// };
+
+int	ft_check_map_form(char **tab, int size);
 int	ft_check_walls(char **tab, char *file_name, int size);
 
 #endif
