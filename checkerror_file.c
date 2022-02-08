@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/07 19:53:03 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/08 10:39:18 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_check_file_name(char *file_name)
 		{
             count = 1;
 			if (ft_strcmp(file_name + i, str) == 0  && file_name[i + 4] == '\0' && ft_len(file_name) > 4)
-				    return (write(1, "c bon\n", 6), 0);
+				return (0);
 		}
 		i++;
 	}
