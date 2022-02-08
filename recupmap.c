@@ -6,13 +6,12 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/08 11:21:31 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/08 12:07:53 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// Pourquoi ne pas déclarer la size de mon char ** en variable globale?
 
 int	ft_recup_map_size(char *file_name)
 {
@@ -32,7 +31,7 @@ int	ft_recup_map_size(char *file_name)
 	free(line);
 	close (fd);
 	if (total_nb_line < 3)
-		return (write(1, "Error\nProblem with the lines in the file\n", 38), -1);
+		return (write(1, "Error\nProblem with the number of lines\n", 36), -1);
 	return (total_nb_line);
 }
 
@@ -44,17 +43,16 @@ char	**ft_print_map(char *file_name)
 	int		nb_line;
 
 	i = 0;
-	fd = open(file_name, O_RDONLY);
 	nb_line = ft_recup_map_size(file_name);
-	if (nb < 0)
-		return ;
+	if (nb_line == -1)
+		return (NULL);
+	fd = open(file_name, O_RDONLY);
 	str_map = malloc(sizeof(char *) * (nb_line + 1));
 	if (!str_map)
-		return ;
+		return (NULL);
 	while (nb_line > 0)
 	{
 		str_map[i] = get_next_line(fd);
-		printf("%s", str_map[i]);
 		i++;
 		nb_line--;
 	}
@@ -71,7 +69,7 @@ int	main()
 	int		size;
 	//int		nb_line;
 
-	size = ft_recup_map_size(file_name);
+	//size = ft_recup_map_size(file_name);
 	tab = ft_print_map(file_name);
 	//ft_check_map_char(tab, size);
 	//nb_line = ft_recup_map_size(file_name);
