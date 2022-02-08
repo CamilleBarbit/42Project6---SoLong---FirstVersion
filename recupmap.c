@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/08 12:07:53 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/08 14:57:08 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,45 +35,43 @@ int	ft_recup_map_size(char *file_name)
 	return (total_nb_line);
 }
 
-char	**ft_print_map(char *file_name)
+void	ft_print_map(struct Map *map_ptr)
 {
-	char	**str_map;
 	int		fd;
 	int		i;
 	int		nb_line;
 
 	i = 0;
-	nb_line = ft_recup_map_size(file_name);
+	nb_line = map_ptr->map_size;
 	if (nb_line == -1)
-		return (NULL);
-	fd = open(file_name, O_RDONLY);
-	str_map = malloc(sizeof(char *) * (nb_line + 1));
-	if (!str_map)
-		return (NULL);
+		return ;
+	fd = open(map_ptr->file_name, O_RDONLY);
+	map_ptr->map_tab[i] = malloc(sizeof(char *) * (nb_line + 1));
+	if (!map_ptr->map_tab)
+		return ;
 	while (nb_line > 0)
 	{
-		str_map[i] = get_next_line(fd);
+		map_ptr->map_tab[i] = get_next_line(fd);
 		i++;
 		nb_line--;
 	}
-	str_map[i] = 0;
+	map_ptr->map_tab[i] = 0;
 	close(fd);
-	return (str_map);
 }
 
 
-int	main()
-{
-	char	**tab;
-	char	*file_name = "map/map.ber";
-	int		size;
-	//int		nb_line;
-
-	//size = ft_recup_map_size(file_name);
-	tab = ft_print_map(file_name);
-	//ft_check_map_char(tab, size);
-	//nb_line = ft_recup_map_size(file_name);
-	//ft_check_map_walls(tab, file_name, size);
-	//ft_check_map_form(tab, size);
-	return (0);
-}
+// int	main()
+// {
+// 	char	**tab;
+// 	char	*file_name = "map/map.ber";
+// 	int		size;
+// 	int		nb_line;
+	
+// 	size = ft_recup_map_size(file_name);
+// 	tab = ft_print_map(file_name);
+// 	ft_check_map_char(tab, size);
+// 	nb_line = ft_recup_map_size(file_name);
+// 	ft_check_map_walls(tab, file_name, size);
+// 	ft_check_map_form(tab, size);
+// 	return (0);
+// }
