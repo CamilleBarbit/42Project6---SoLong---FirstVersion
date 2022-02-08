@@ -6,25 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/08 10:42:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/08 11:21:31 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 // Pourquoi ne pas déclarer la size de mon char ** en variable globale?
-void	ft_free_map(char **tab, int size)
-{
-	int	y;
-
-	y = 0;
-	while (y < size)
-	{
-		free(tab[y]);
-		y++;
-	}
-	free(tab);
-}
 
 int	ft_recup_map_size(char *file_name)
 {
@@ -32,12 +20,8 @@ int	ft_recup_map_size(char *file_name)
 	int		total_nb_line;
 	int		fd;
 
-	if (!file_name)
-		exit (1);
 	total_nb_line = 0;
 	fd = open(file_name, O_RDONLY);
-	if (fd < 0)
-		exit (1);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -47,6 +31,8 @@ int	ft_recup_map_size(char *file_name)
 	}
 	free(line);
 	close (fd);
+	if (total_nb_line < 3)
+		return (write(1, "Error\nProblem with the lines in the file\n", 38), -1);
 	return (total_nb_line);
 }
 
@@ -57,16 +43,14 @@ char	**ft_print_map(char *file_name)
 	int		i;
 	int		nb_line;
 
-	if (!file_name)
-		exit (1);
 	i = 0;
 	fd = open(file_name, O_RDONLY);
-	if (fd < 0)
-		exit (1);
-	nb_line = ft_recup_map_size(file_name); //si nb_line < 3, alors il y a une erreur
+	nb_line = ft_recup_map_size(file_name);
+	if (nb < 0)
+		return ;
 	str_map = malloc(sizeof(char *) * (nb_line + 1));
 	if (!str_map)
-		exit (1);
+		return ;
 	while (nb_line > 0)
 	{
 		str_map[i] = get_next_line(fd);
@@ -91,7 +75,7 @@ int	main()
 	tab = ft_print_map(file_name);
 	//ft_check_map_char(tab, size);
 	//nb_line = ft_recup_map_size(file_name);
-	ft_check_map_walls(tab, file_name, size);
+	//ft_check_map_walls(tab, file_name, size);
 	//ft_check_map_form(tab, size);
 	return (0);
 }
