@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/09 12:03:53 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 13:22:48 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	ft_check_map_walls(struct s_Map *map_ptr)
 		x++;
 	}
 	x = 0;
-	while (map_ptr->map_tab[size - 1][x + 1])
+	while (map_ptr->map_tab[map_ptr->map_size - 1][x + 1])
 	{
-		if (map_ptr->map_tab[size - 1][x] != '1')
+		if (map_ptr->map_tab[map_ptr->map_size - 1][x] != '1')
 			return (write(1, "Error\nWalls are missing!\n", 25), 1);
 		x++;
 	}
@@ -93,7 +93,6 @@ int	ft_check_map_form(struct s_Map *map_ptr)
 		len = ft_len(map_ptr->map_tab[y]);
 		if (len != tempo)
 			return (write(1, "Error\nString lengths are not the same!\n", 33), 1);
-		}
 		y++;
 	}
 	return (0);
