@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/09 11:32:54 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 16:06:15 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int	ft_check_file_name(char *file_name)
 		}
 		i++;
 	}
-	return(write(1, "Error\nProblem with file name\n", 29), 1);
+	return(printf("Error\nProblem with file name\n"), 1);
 }
