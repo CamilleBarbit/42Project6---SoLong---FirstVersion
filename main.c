@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 13:14:33 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 16:06:39 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_filler(s_Map *map_ptr, char *argv1)
 	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name);
 	map_ptr->map_tab = ft_print_map(map_ptr);
 	ft_strcpy(map_ptr->map_title, "so_long");
-	printf("%s", map_ptr->map_title);
 	//map_ptr->mlx_init = mlx_init();
 	//map_ptr->mlx_window = mlx_new_window(map_ptr->mlx_init, int size_x, int size_y, )
 } 
@@ -80,5 +79,5 @@ int main(int argc, char **argv)
 			return (1);
 		return (0);   
     }
-	return (write(1, "Error\nMissing arguments!\n", 25), 1);
+	return (printf("Error\nMissing arguments!\n"), 1);
 }
