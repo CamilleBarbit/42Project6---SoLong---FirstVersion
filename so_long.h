@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 11:24:44 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 12:05:27 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ struct  s_Map
 
 int		ft_recup_map_size(char *file_name);
 char	**ft_print_map(struct s_Map *map_ptr);
-int		ft_check_map_form(char **tab, int size);
-int		ft_check_walls(char **tab, char *file_name, int size);
-void	ft_free_map(char **tab, int size);
+int		ft_check_map_form(struct s_Map *map_ptr);
+int		ft_check_walls(struct s_Map *map_ptr);
+int		ft_check_map_char(struct s_Map *map_ptr);
+void	ft_free_map(struct s_Map *map_ptr);
 char	*ft_sdup(char *src);
 int		ft_len(char *str);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_check_file_name(char *file_name);
+int		ft_check_all_errors(struct s_Map *map_ptr);
 
 #endif
