@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 11:35:49 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 12:13:57 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,10 @@ int main(int argc, char **argv)
 			return (1);
 		if (ft_check_file_name(argv[1]) == 1)
 			return (1);
-		ft_filler(map_ptr, argv[1]); 
+		ft_filler(map_ptr, argv[1]);
+		if (ft_check_all_errors(map_ptr) == 1)
+			return (1); 
 
-
-
-
-        // if (ft_check_file_name(argv[1]) == 1)
-        //     return (1);
-        // if (ft_print_map(argv[1]))
         
     }
 	//return (write(1, "Error\nMissing arguments!\n", 25), 1);
