@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 13:10:01 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 15:40:20 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "minilibx/mlx.h"
 #include "get_next_line/get_next_line.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 
 typedef struct s_Map s_Map;
 struct  s_Map
