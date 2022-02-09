@@ -3,45 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   checkerror_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/08 10:39:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/09 11:32:54 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "string.h"
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int ft_len(char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
 int	ft_check_file_name(char *file_name)
 {
-	int	i;
+	int		i;
 	char	*str;
-    int     count;
+    int		count;
 
 	i = 0;
 	str = ".ber";
@@ -56,13 +32,5 @@ int	ft_check_file_name(char *file_name)
 		}
 		i++;
 	}
-	return(write(1, "Error\nProblem with file name\n", 28), 1);
-}
-
-int	main()
-{
-	char	*file_name = ".ber"; //problème réglé!
-
-	ft_check_file_name(file_name);
-	return (0);
+	return(write(1, "Error\nProblem with file name\n", 29), 1);
 }
