@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 15:40:20 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/09 16:54:58 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,16 @@ struct  s_Map
 {
     char	**map_tab;
 	char	*file_name;
-    int		map_size;
-    void    *mlx_init;
-    void	*mlx_window;
-    char    map_title[100];
+	int		map_size;
+	void	*mlx_pt;
+	void	*mlx_window;
+	void	*mlx_exit;
+	void	*mlx_walls;
+	void	*mlx_player;
+	void	*mlx_items;
+	void	*mlx_empty_spaces;
+	char	map_title[100];
+	int		size_x;
 };
 
 int		ft_recup_map_size(char *file_name);
