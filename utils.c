@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:02:19 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/08 14:53:38 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/09 10:59:24 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,21 @@ int ft_len(char *str)
     return (i);
 }
 
-char	*ft_sdup(const char *src)
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_sdup(char *src)
 {
 	char	*dest;
 	int		i;
@@ -41,7 +55,6 @@ char	*ft_sdup(const char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
 
 void	ft_free_map(char **tab, int size)
 {
