@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   recupmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/08 14:57:08 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/09 11:35:02 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,28 @@ int	ft_recup_map_size(char *file_name)
 	return (total_nb_line);
 }
 
-void	ft_print_map(struct Map *map_ptr)
+char	**ft_print_map(struct s_Map *map_ptr)
 {
-	int		fd;
-	int		i;
-	int		nb_line;
+	int	fd;
+	int	i;
+	int	nb_line;
 
 	i = 0;
 	nb_line = map_ptr->map_size;
-	if (nb_line == -1)
-		return ;
 	fd = open(map_ptr->file_name, O_RDONLY);
-	map_ptr->map_tab[i] = malloc(sizeof(char *) * (nb_line + 1));
+	map_ptr->map_tab = malloc(sizeof(char *) * (nb_line + 1));
 	if (!map_ptr->map_tab)
-		return ;
+		return (NULL);
 	while (nb_line > 0)
 	{
 		map_ptr->map_tab[i] = get_next_line(fd);
+		//printf("%s", map_ptr->map_tab[i]);
 		i++;
 		nb_line--;
 	}
 	map_ptr->map_tab[i] = 0;
 	close(fd);
+	return (map_ptr->map_tab);
 }
 
 
