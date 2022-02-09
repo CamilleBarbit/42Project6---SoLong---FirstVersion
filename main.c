@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/08 15:02:45 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/09 11:35:49 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 /* Je fais une fonction qui remplit les variables
 que j'ai dans ma structure */
 
-
-void	ft_filler(Map *map_ptr, char *argv1)
+void	ft_filler(s_Map *map_ptr, char *argv1)
 {
 	map_ptr->file_name = ft_sdup(argv1);
 	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name);
@@ -63,16 +62,16 @@ void	ft_filler(Map *map_ptr, char *argv1)
 
 int main(int argc, char **argv)
 {
-    struct Map	*map_ptr = NULL;
+    struct s_Map	*map_ptr = NULL;
 
     if (argc == 2)
     {
-		map_ptr = malloc(sizeof(struct Map));
+		map_ptr = malloc(sizeof(struct s_Map));
 		if (!map_ptr)
 			return (1);
-		ft_filler(map_ptr, argv[1]); //je lui envoie l'adresse de ma struct 
-
-
+		if (ft_check_file_name(argv[1]) == 1)
+			return (1);
+		ft_filler(map_ptr, argv[1]); 
 
 
 
@@ -82,5 +81,5 @@ int main(int argc, char **argv)
         // if (ft_print_map(argv[1]))
         
     }
-	return (0);
+	//return (write(1, "Error\nMissing arguments!\n", 25), 1);
 }
