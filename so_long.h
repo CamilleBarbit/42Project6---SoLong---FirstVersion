@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 13:11:32 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 16:52:58 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_check_file_name(char *file_name);
 int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
-void    init_game(struct s_Map *map_ptr);
+void    ft_init_game(struct s_Map *map_ptr);
 void    get_player_position(struct s_Map *map_ptr);
 
 #endif
