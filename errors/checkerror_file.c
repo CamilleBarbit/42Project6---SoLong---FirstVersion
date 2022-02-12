@@ -6,11 +6,11 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/09 16:06:15 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 10:43:55 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 #include "string.h"
 
 int	ft_check_file_name(char *file_name)
