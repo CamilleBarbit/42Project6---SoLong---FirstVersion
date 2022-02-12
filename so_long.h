@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 16:54:58 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 12:28:51 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ struct  s_Map
     char	**map_tab;
 	char	*file_name;
 	int		map_size;
-	void	*mlx_pt;
+	int		player_position_x;
+	int		player_position_y;
+	void	*mlx_ptr;
 	void	*mlx_window;
 	void	*mlx_exit;
 	void	*mlx_walls;
@@ -36,7 +38,7 @@ struct  s_Map
 };
 
 int		ft_recup_map_size(char *file_name);
-char	**ft_print_map(struct s_Map *map_ptr);
+char	**ft_recup_map(struct s_Map *map_ptr);
 int		ft_check_map_form(struct s_Map *map_ptr);
 int		ft_check_walls(struct s_Map *map_ptr);
 int		ft_check_map_char(struct s_Map *map_ptr);
