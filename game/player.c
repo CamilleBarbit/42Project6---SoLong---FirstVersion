@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 13:26:23 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 17:20:27 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,19 @@ void    get_player_position(struct s_Map *map_ptr)
         }
         y++;
     }
+}
+
+int key_hook(int key code, struct s_Map *map_ptr)
+{
+    if (keycode == 119)
+        ft_move_up(map_ptr);
+    else if (keycode == 97)
+        ft_move_left(map_ptr);
+    else if (keycode == 115)
+        ft_move_down(map_ptr);
+    else if (keycode == 100)
+        ft_move_right(map_ptr);
+    else if (keycode == 65307) //esc button
+        return (1);
+    return (0);
 }
