@@ -6,11 +6,43 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 17:20:27 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 19:56:43 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+void    ft_move_up(struct s_Map *map_ptr)
+{
+    if(map_ptr->map_tab[map_ptr->player_position_y - 1][map_ptr->player_position_x] !=1)
+    {
+        map_ptr->player_position_y--;
+    }
+}
+
+void    ft_move_left(struct s_Map *map_ptr)
+{
+    if(map_ptr->map_tab[map_ptr->player_position_y][map_ptr->player_position_x - 1] !=1)
+    {
+        map_ptr->player_position_x--;
+    }
+}
+
+void    ft_move_down(struct s_Map *map_ptr)
+{
+    if(map_ptr->map_tab[map_ptr->player_position_y + 1][map_ptr->player_position_x] !=1)
+    {
+        map_ptr->player_position_y++;
+    }
+}
+
+void    ft_move_right(struct s_Map *map_ptr)
+{
+    if(map_ptr->map_tab[map_ptr->player_position_y][map_ptr->player_position_x + 1] !=1)
+    {
+        map_ptr->player_position_x++;
+    }
+}
 
 void    get_player_position(struct s_Map *map_ptr)
 {
@@ -36,7 +68,7 @@ void    get_player_position(struct s_Map *map_ptr)
     }
 }
 
-int key_hook(int key code, struct s_Map *map_ptr)
+int key_hook(int key code, struct s_Map *map_ptr) //This is the function called
 {
     if (keycode == 119)
         ft_move_up(map_ptr);
