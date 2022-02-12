@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 12:11:26 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 13:19:22 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,7 @@ void	ft_filler(s_Map *map_ptr, char *argv1)
 	map_ptr->map_tab = ft_recup_map(map_ptr);
 	map_ptr->size_x = ft_len (map_ptr->map_tab[0]);
 	ft_strcpy(map_ptr->map_title, "so_long");
-	// map_ptr->mlx_ptr = mlx_init();
-	// map_ptr->mlx_window = mlx_new_window(map_ptr->mlx_ptr, 400, 400, map_ptr->map_title);
-	// map_ptr->mlx_items = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/items.xpm", &width, &height);
-	// mlx_ptr->mlx_player = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/player.xpm", &width, &height);
-	// mlx_ptr->mlx_exit = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/exit.xpm", &width, &height);
-	// mlx_ptr->mlx_empty_spaces = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/empty_spaces.xpm", &width, &height);
-	// mlx_ptr->mlx_walls = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/walls.xpm", &width, &height);
-} 
-
+}
 
 // int handle_mouse(int keycode, void *param)
 // {
@@ -65,3 +57,10 @@ void	ft_filler(s_Map *map_ptr, char *argv1)
 // 	return (printf("Error\nMissing arguments!\n"), 1);
 // }
 
+int	main()
+{
+	s_Map	*map_ptr;
+
+	init_game(map_ptr);
+	return (0);
+}
