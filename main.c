@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 13:19:22 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 16:54:14 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,22 @@ void	ft_filler(s_Map *map_ptr, char *argv1)
 // 	return (printf("Error\nMissing arguments!\n"), 1);
 // }
 
-int	main()
+int	main(int argc, char **argv)
 {
 	s_Map	*map_ptr;
 
-	init_game(map_ptr);
-	return (0);
+	if (argc == 2)
+	{
+		map_ptr = malloc(sizeof(struct s_Map));
+		if (!map_ptr)
+			return (1);
+		if (ft_check_file_name(argv[1]) == 1)
+			return (free(map_ptr), 1);
+		ft_filler(map_ptr, argv[1]);
+		if (ft_check_all_errors(map_ptr) == 1)
+			return (1);
+		ft_init_game(map_ptr);
+		mlx_loop(map_ptr->mlx_ptr);
+		return (0);
+	}
 }
