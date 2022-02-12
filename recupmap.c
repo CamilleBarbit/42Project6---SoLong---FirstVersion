@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 11:35:02 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 11:25:18 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_recup_map_size(char *file_name)
 	return (total_nb_line);
 }
 
-char	**ft_print_map(struct s_Map *map_ptr)
+char	**ft_recup_map(struct s_Map *map_ptr)
 {
 	int	fd;
 	int	i;
@@ -50,7 +50,6 @@ char	**ft_print_map(struct s_Map *map_ptr)
 	while (nb_line > 0)
 	{
 		map_ptr->map_tab[i] = get_next_line(fd);
-		//printf("%s", map_ptr->map_tab[i]);
 		i++;
 		nb_line--;
 	}
@@ -58,20 +57,3 @@ char	**ft_print_map(struct s_Map *map_ptr)
 	close(fd);
 	return (map_ptr->map_tab);
 }
-
-
-// int	main()
-// {
-// 	char	**tab;
-// 	char	*file_name = "map/map.ber";
-// 	int		size;
-// 	int		nb_line;
-	
-// 	size = ft_recup_map_size(file_name);
-// 	tab = ft_print_map(file_name);
-// 	ft_check_map_char(tab, size);
-// 	nb_line = ft_recup_map_size(file_name);
-// 	ft_check_map_walls(tab, file_name, size);
-// 	ft_check_map_form(tab, size);
-// 	return (0);
-// }
