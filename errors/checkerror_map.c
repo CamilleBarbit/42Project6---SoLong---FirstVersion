@@ -6,12 +6,11 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/12 10:44:01 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 11:24:01 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "string.h"
 
 int	ft_check_map_walls(struct s_Map *map_ptr)
 {
