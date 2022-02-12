@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 16:52:58 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 17:29:17 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ struct  s_Map
 	void	*mlx_empty_spaces;
 	char	map_title[100];
 	int		size_x;
+	int		count_mouv;
 };
 
 int		ft_recup_map_size(char *file_name);
