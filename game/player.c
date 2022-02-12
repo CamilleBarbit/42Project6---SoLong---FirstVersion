@@ -6,9 +6,11 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 12:29:43 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 13:26:23 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../so_long.h"
 
 void    get_player_position(struct s_Map *map_ptr)
 {
@@ -26,7 +28,7 @@ void    get_player_position(struct s_Map *map_ptr)
             {
                 map_ptr->player_position_x = x;
                 map_ptr->player_position_y = y;
-                map_ptr->map[y][x] = '0';
+                map_ptr->map_tab[y][x] = '0';
             }
             x++;
         }
