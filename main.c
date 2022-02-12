@@ -6,11 +6,12 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/09 16:52:04 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/12 12:11:26 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "minilibx/mlx.h"
 
 /* Je fais une fonction qui remplit les variables
 que j'ai dans ma structure */
@@ -19,15 +20,16 @@ void	ft_filler(s_Map *map_ptr, char *argv1)
 {
 	map_ptr->file_name = ft_sdup(argv1);
 	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name);
-	map_ptr->map_tab = ft_print_map(map_ptr);
+	map_ptr->map_tab = ft_recup_map(map_ptr);
+	map_ptr->size_x = ft_len (map_ptr->map_tab[0]);
 	ft_strcpy(map_ptr->map_title, "so_long");
-	map_ptr->mlx_pt = mlx_init();
-	map_ptr->mlx_window = mlx_new_window(map_ptr->mlx_pt, int size_x, int size_y, map_ptr->map_title);
-	map_ptr->mlx_items = mlx_xpm_file_to_image(map_ptr->mlx_pt, "items.xpm", &width, &height);
-	mlx_ptr->mlx_player = mlx_xpm_file_to_image(map_ptr->mlx_pt, "player.xpm", &width, &height);
-	mlx_ptr->mlx_exit = mlx_xpm_file_to_image(map_ptr->mlx_pt, "exit.xpm", &width, &height);
-	mlx_ptr->mlx_empty_spaces = mlx_xpm_file_to_image(map_ptr->mlx_pt, "empty_spaces.xpm", &width, &height);
-	mlx_ptr->mlx_walls = mlx_xpm_file_to_image(map_ptr->mlx_pt, "walls.xpm", &width, &height);
+	// map_ptr->mlx_ptr = mlx_init();
+	// map_ptr->mlx_window = mlx_new_window(map_ptr->mlx_ptr, 400, 400, map_ptr->map_title);
+	// map_ptr->mlx_items = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/items.xpm", &width, &height);
+	// mlx_ptr->mlx_player = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/player.xpm", &width, &height);
+	// mlx_ptr->mlx_exit = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/exit.xpm", &width, &height);
+	// mlx_ptr->mlx_empty_spaces = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/empty_spaces.xpm", &width, &height);
+	// mlx_ptr->mlx_walls = mlx_xpm_file_to_image(map_ptr->mlx_ptr, "images/walls.xpm", &width, &height);
 } 
 
 
@@ -44,45 +46,22 @@ void	ft_filler(s_Map *map_ptr, char *argv1)
 //     return (0);
 // }
 
-// int main()
+// int main(int argc, char **argv)
 // {
-//     map     so_long;
+//     s_Map	*map_ptr = NULL;
 
-//     so_long.x = 0;
-//     so_long.y = 0;
-//     so_long.mlx = mlx_init();
-//     if (!so_long.mlx)
-//         return (0);
-//     so_long.window = mlx_new_window(so_long.mlx, 800, 800, "First Window!");
-//     //while (position.x < 400 && position.y < 400)
-//     // {
-//     //     mlx_pixel_put(mlx, window, position.x, position.y, 0x00CCFFCC);
-//     //     position.x++;
-//     //     position.y++;
-//     // }
-//     so_long.image = mlx_new_image(so_long.mlx, 800, 800);
-//     mlx_put_image_to_window(so_long.mlx, so_long.window, so_long.image, so_long.x, so_long.y);
-//     mlx_mouse_hook(so_long.window, handle_mouse, 0);
-//     mlx_key_hook(so_long.window, handle_key, 0);
-//     mlx_loop(so_long.mlx);
+//     if (argc == 2)
+//     {
+// 		map_ptr = malloc(sizeof(struct s_Map));
+// 		if (!map_ptr)
+// 			return (1);
+// 		if (ft_check_file_name(argv[1]) == 1)
+// 			return (1);
+// 		ft_filler(map_ptr, argv[1]);
+// 		if (ft_check_all_errors(map_ptr) == 1)
+// 			return (1);
+// 		return (0);   
+//     }
+// 	return (printf("Error\nMissing arguments!\n"), 1);
 // }
 
-
-int main(int argc, char **argv)
-{
-    struct s_Map	*map_ptr = NULL;
-
-    if (argc == 2)
-    {
-		map_ptr = malloc(sizeof(struct s_Map));
-		if (!map_ptr)
-			return (1);
-		if (ft_check_file_name(argv[1]) == 1)
-			return (1);
-		ft_filler(map_ptr, argv[1]);
-		if (ft_check_all_errors(map_ptr) == 1)
-			return (1);
-		return (0);   
-    }
-	return (printf("Error\nMissing arguments!\n"), 1);
-}
