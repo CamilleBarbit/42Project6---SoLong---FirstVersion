@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 15:50:05 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 16:39:53 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	get_number_of_items(int	*tab_count)
 }
 
 //option2
-int	get_number_of_items(struct s_Map *map_ptr)
+void	get_number_of_items(struct s_Map *map_ptr)
 {
 	int	x;
 	int	y;
@@ -63,7 +63,7 @@ int	get_number_of_items(struct s_Map *map_ptr)
 		}
 		y++;
 	}
-	return (count);
+	map_ptr->count_items = count;
 }
 
 void	get_items(struct s_Map *map_ptr)
