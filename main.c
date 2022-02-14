@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 16:54:14 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 11:05:55 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 /* Je fais une fonction qui remplit les variables
 que j'ai dans ma structure */
 
-void	ft_filler(s_Map *map_ptr, char *argv1)
+void	ft_filler_basics(s_Map *map_ptr, char *str)
 {
-	map_ptr->file_name = ft_sdup(argv1);
-	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name);
-	map_ptr->map_tab = ft_recup_map(map_ptr);
-	map_ptr->size_x = ft_len (map_ptr->map_tab[0]);
-	ft_strcpy(map_ptr->map_title, "so_long");
+	map_ptr->file_name = ft_sdup(str); //nom de mon ficher .ber
+	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name); //taille de ma map (y)
+	map_ptr->map_tab = ft_recup_map(map_ptr); //Je récupère la map dans un char **
+	map_ptr->size_x = ft_len (map_ptr->map_tab[0]); //La taille de ma première ligne
+	ft_strcpy(map_ptr->map_title, "so_long"); //Le nom de ma fenêtre de jeu
 }
 
 // int handle_mouse(int keycode, void *param)
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 			return (free(map_ptr), 1);
 		ft_filler(map_ptr, argv[1]);
 		if (ft_check_all_errors(map_ptr) == 1)
-			return (1);
+			return (free(map_ptr)1);
 		ft_init_game(map_ptr);
 		mlx_loop(map_ptr->mlx_ptr);
 		return (0);
