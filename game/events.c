@@ -6,13 +6,13 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 16:29:35 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 16:37:04 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../so_long.h"
 
-int key_hook(int keycode, struct s_Map *map_ptr) //This is the function called
+int handle_key(int keycode, struct s_Map *map_ptr) //This is the function called
 {
     if (keycode == 119)
         ft_move_up(map_ptr);
@@ -27,4 +27,4 @@ int key_hook(int keycode, struct s_Map *map_ptr) //This is the function called
     return (0);
 }
 
-int mouse_hook()
+int handle_mouse()
