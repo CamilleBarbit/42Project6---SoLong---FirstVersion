@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/12 11:25:18 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 11:05:09 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_recup_map_size(char *file_name)
 	return (total_nb_line);
 }
 
-char	**ft_recup_map(struct s_Map *map_ptr)
+char	**ft_recup_map(struct s_Map *map_ptr) //je peux la passser en void
 {
 	int	fd;
 	int	i;
