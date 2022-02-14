@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 16:30:08 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 16:36:47 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,6 @@ void	ft_filler_basics(s_Map *map_ptr, char *str)
 	map_ptr->size_x = ft_len (map_ptr->map_tab[0]); //La taille de ma première ligne
 	ft_strcpy(map_ptr->map_title, "so_long"); //Le nom de ma fenêtre de jeu
 }
-
-// int handle_mouse(int keycode, void *param)
-// {
-//     // printf("the keycode is: %d\n", keycode);
-//     return (0);
-// }
-
-// int handle_key(int keycode, void *param) //handle echap
-// {
-//     if (keycode == 65307)
-//         exit(1);
-//     return (0);
-// }
 
 // int main(int argc, char **argv)
 // {
@@ -72,8 +59,8 @@ int	main(int argc, char **argv)
 		if (ft_check_all_errors(map_ptr) == 1)
 			return (free(map_ptr), 1);
 		ft_init_game(map_ptr);
-		mlx_key_hook(map_ptr->mlx_window, key_hook, map_ptr);
-		mlx_mouse_hook(map_ptr->mlx_window, mouse hook, map_ptr);
+		mlx_key_hook(map_ptr->mlx_window, handle_key, map_ptr);
+		mlx_mouse_hook(map_ptr->mlx_window, handle_mouse, map_ptr);
 		mlx_loop(map_ptr->mlx_ptr, key_hook, );
 		return (0);
 	}
