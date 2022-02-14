@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 15:59:24 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 16:20:32 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,4 @@ static void    ft_move_right(struct s_Map *map_ptr)
     }
 	else
 		printf("Error\nMoving right is impossible!");
-}
-}
-
-int key_hook(int key code, struct s_Map *map_ptr) //This is the function called
-{
-    if (keycode == 119)
-        ft_move_up(map_ptr);
-    else if (keycode == 97)
-        ft_move_left(map_ptr);
-    else if (keycode == 115)
-        ft_move_down(map_ptr);
-    else if (keycode == 100)
-        ft_move_right(map_ptr);
-    else if (keycode == 65307) //esc button
-        return (1);
-    return (0);
 }
