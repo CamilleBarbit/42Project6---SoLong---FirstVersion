@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 11:56:07 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 16:30:08 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ int	main(int argc, char **argv)
 		if (ft_check_all_errors(map_ptr) == 1)
 			return (free(map_ptr), 1);
 		ft_init_game(map_ptr);
-		mlx_loop(map_ptr->mlx_ptr);
+		mlx_key_hook(map_ptr->mlx_window, key_hook, map_ptr);
+		mlx_mouse_hook(map_ptr->mlx_window, mouse hook, map_ptr);
+		mlx_loop(map_ptr->mlx_ptr, key_hook, );
 		return (0);
 	}
 }
