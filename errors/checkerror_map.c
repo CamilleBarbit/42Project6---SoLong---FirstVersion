@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/14 11:16:41 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 11:43:25 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,9 @@ int	ft_check_map_char(struct s_Map *map_ptr)
 	if (tab_count[0] != 1 || tab_count[1] < 1 || tab_count[2] < 1)
 		return (printf("Error\nSome characters are missing!\n"), 1);
 	get_player_position(map_ptr);
-	get_number_of_items(tab_count); //A travailler!
+	map_ptr->count_items = get_number_of_items(tab_count);
 	return (0);
 }
-
 
 int	ft_check_map_form(struct s_Map *map_ptr)
 {
