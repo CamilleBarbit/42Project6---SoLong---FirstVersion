@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 11:46:41 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 15:50:05 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,13 @@ int	get_number_of_items(struct s_Map *map_ptr)
 		y++;
 	}
 	return (count);
+}
+
+void	get_items(struct s_Map *map_ptr)
+{
+	if (map_ptr->map_tab[player_position_y][player_position_x] == 'C')
+	{
+		map_ptr->count_items--;
+		map_ptr->map_tab[player_position_y][player_position_x] == '0';
+	}
 }
