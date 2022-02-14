@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/12 19:56:32 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 10:52:26 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	ft_check_map_form(struct s_Map *map_ptr)
 	int		len;
 	int		y;
 
-	tempo = ft_len(map_ptr->map_tab[0]);
+	tempo = map_ptr->size_x;
 	y = 1;
 	while (y < map_ptr->map_size)
 	{
@@ -102,10 +102,10 @@ int	ft_check_map_form(struct s_Map *map_ptr)
 int	ft_check_all_errors(struct s_Map *map_ptr)
 {
 	if (ft_check_map_form(map_ptr) == 1)
-		return (ft_free_map(map_ptr), 1);
+		return (1);
 	if (ft_check_map_walls(map_ptr) == 1)
-		return (ft_free_map(map_ptr), 1);
+		return (1);
 	if (ft_check_map_char(map_ptr) == 1)
-		return (ft_free_map(map_ptr), 1);
+		return (1);
 	return (0);
 }
