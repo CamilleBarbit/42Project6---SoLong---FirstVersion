@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 11:38:50 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 11:53:02 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_Map s_Map;
 struct  s_Map
 {
-    char	**map_tab; //défini dans filler
+	char	**map_tab; //défini dans filler
 	char	*file_name; //défini dans filler
 	int		map_size; //défini dans filler
 	int		player_position_x; //défini dans check_map_char
@@ -55,7 +55,7 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_check_file_name(char *file_name);
 int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
-void    ft_init_game(struct s_Map *map_ptr);
-void    get_player_position(struct s_Map *map_ptr);
+void	ft_init_game(struct s_Map *map_ptr);
+void	get_player_position(struct s_Map *map_ptr);
 
 #endif
