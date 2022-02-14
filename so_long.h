@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 10:55:46 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/14 11:38:50 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@
 typedef struct s_Map s_Map;
 struct  s_Map
 {
-    char	**map_tab;
-	char	*file_name;
-	int		map_size;
-	int		player_position_x;
-	int		player_position_y;
-	void	*mlx_ptr;
-	void	*mlx_window;
-	void	*mlx_exit;
-	void	*mlx_walls;
-	void	*mlx_player;
-	void	*mlx_items;
-	void	*mlx_empty_spaces;
-	char	map_title[100];
-	int		size_x;
+    char	**map_tab; //défini dans filler
+	char	*file_name; //défini dans filler
+	int		map_size; //défini dans filler
+	int		player_position_x; //défini dans check_map_char
+	int		player_position_y; //défini dans check_map_char
+	void	*mlx_ptr; //défini dans ft_init_game
+	void	*mlx_window; //défini dans ft_init_game
+	void	*mlx_exit; //défini dans ft_associate_files_to_images
+	void	*mlx_walls; //défini dans ft_associate_files_to_images
+	void	*mlx_player; //défini dans ft_associate_files_to_images
+	void	*mlx_items; //défini dans ft_associate_files_to_images
+	void	*mlx_empty_spaces; //défini dans ft_associate_files_to_images
+	char	map_title[100]; //défini dans filler
+	int		size_x; //défini dans filler
 	int		count_mouv;
-	int		count_items;
+	int		count_items; //défini dans check_map_char
 };
 
 int		ft_recup_map_size(char *file_name);
@@ -48,7 +48,7 @@ void	ft_free_map(struct s_Map *map_ptr);
 void	ft_filler_basics(s_Map *map_ptr, char *str);
 void	ft_associate_files_to_images(struct s_Map *map_ptr);
 void	get_player_position(struct s_Map *map_ptr);
-void	ft_draw_map(struct s_Map *map_ptr);
+void	ft_draw_map(struct s_Map *map_ptr);sss
 char	*ft_sdup(char *src);
 int		ft_len(char *str);
 int		ft_strcmp(char *s1, char *s2);
