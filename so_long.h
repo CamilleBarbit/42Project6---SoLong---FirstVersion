@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/16 12:11:25 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/16 13:35:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ struct  s_Map
 	int		size_x; //défini dans filler
 	int		count_mouv;
 	int		count_items; //défini dans check_map_char
-	int		*width;
-	int		*heigth;
+	int		width;
+	int		heigth;
 };
 
 int		ft_recup_map_size(char *file_name);
@@ -59,5 +59,6 @@ int		ft_check_file_name(char *file_name);
 int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
 void	ft_init_game(struct s_Map *map_ptr);
+int 	key_hook(int keycode, struct s_Map *map_ptr);
 
 #endif
