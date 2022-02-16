@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 16:39:53 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/16 10:39:00 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	get_player_position(struct s_Map *map_ptr)
 }
 
 //option1
-void	get_number_of_items(int	*tab_count)
-{
-	map_ptr->count_items = tab_count[1];
-}
+// void	get_number_of_items(int	*tab_count)
+// {
+// 	map_ptr->count_items = tab_count[1];
+// }
 
 //option2
-void	get_number_of_items(struct s_Map *map_ptr)
+int	get_number_of_items(struct s_Map *map_ptr)
 {
 	int	x;
 	int	y;
@@ -63,14 +63,14 @@ void	get_number_of_items(struct s_Map *map_ptr)
 		}
 		y++;
 	}
-	map_ptr->count_items = count;
+	return (count);
 }
 
 void	get_items(struct s_Map *map_ptr)
 {
-	if (map_ptr->map_tab[player_position_y][player_position_x] == 'C')
+	if (map_ptr->map_tab[map_ptr->player_position_y][map_ptr->player_position_x] == 'C')
 	{
 		map_ptr->count_items--;
-		map_ptr->map_tab[player_position_y][player_position_x] == '0';
+		map_ptr->map_tab[map_ptr->player_position_y][map_ptr->player_position_x] == '0';
 	}
 }
