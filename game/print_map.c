@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:32:48 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/16 15:05:28 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/16 15:20:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_draw_map(struct s_Map *map_ptr)
 				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_walls, 32 * x, 32 * y);
 			else if (map_ptr->map_tab[y][x] == 'C')
 				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_items, 32 * x, 32 * y);
-			else if (map_ptr->map_tab[y][x] = 'P')
+			else if (map_ptr->map_tab[y][x] == 'P')
 				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_player, 32 * x, 32 * y);
 			else if (map_ptr->map_tab[y][x] == 'E')
 				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_exit, 32 * x, 32 * y);
