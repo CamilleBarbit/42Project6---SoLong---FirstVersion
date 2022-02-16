@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 11:53:02 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/16 12:11:25 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "minilibx/mlx.h"
+#include "mlx.h"
 #include "get_next_line/get_next_line.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -37,6 +37,8 @@ struct  s_Map
 	int		size_x; //défini dans filler
 	int		count_mouv;
 	int		count_items; //défini dans check_map_char
+	int		*width;
+	int		*heigth;
 };
 
 int		ft_recup_map_size(char *file_name);
@@ -48,7 +50,8 @@ void	ft_free_map(struct s_Map *map_ptr);
 void	ft_filler_basics(s_Map *map_ptr, char *str);
 void	ft_associate_files_to_images(struct s_Map *map_ptr);
 void	get_player_position(struct s_Map *map_ptr);
-void	ft_draw_map(struct s_Map *map_ptr);sss
+int		get_number_of_items(struct s_Map *map_ptr);
+void	ft_draw_map(struct s_Map *map_ptr);
 char	*ft_sdup(char *src);
 int		ft_len(char *str);
 int		ft_strcmp(char *s1, char *s2);
@@ -56,6 +59,5 @@ int		ft_check_file_name(char *file_name);
 int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
 void	ft_init_game(struct s_Map *map_ptr);
-void	get_player_position(struct s_Map *map_ptr);
 
 #endif
