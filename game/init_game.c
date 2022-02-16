@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:47:07 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/16 14:54:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/16 15:11:44 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_init_game(struct s_Map *map_ptr)
     map_ptr->mlx_ptr = mlx_init();
 	if (map_ptr->mlx_ptr == NULL)
 		printf("Error\nConnection could not be established!");
-    map_ptr->mlx_window = mlx_new_window(map_ptr->mlx_ptr, map_ptr->size_x - 1 * 32, map_ptr->map_size * 32, map_ptr->map_title);
+    map_ptr->mlx_window = mlx_new_window(map_ptr->mlx_ptr, map_ptr->size_x * 32, map_ptr->map_size * 32, map_ptr->map_title);
 	if (map_ptr->mlx_window == NULL)
 		printf("Error\nFailed to create a new window!");
 	ft_associate_files_to_images(map_ptr);
