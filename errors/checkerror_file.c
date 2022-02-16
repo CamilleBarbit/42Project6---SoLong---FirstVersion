@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkerror_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/12 11:23:55 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/16 11:44:55 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int	ft_check_file_name(char *file_name)
 		}
 		i++;
 	}
-	return(printf("Error\nProblem with file name\n"), 1);
+	return(printf("Error\nProblem with file name!\n"), 1);
 }
