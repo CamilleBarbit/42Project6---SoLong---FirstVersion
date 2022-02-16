@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
+#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/14 12:47:55 by camillebarb      ###   ########.fr        #
+#    Updated: 2022/02/16 16:22:52 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,3 +39,5 @@ clean:
 
 fclean: clean
 	${RM} 
+
+gcc -D BUFFER_SIZE=4 -Imlx -Iminilibx get_next_line/get_next_line.c get_next_line/get_next_line_utils.c main.c utils.c game/init_game.c errors/checkerror_file.c errors/checkerror_map.c game/game_utils.c game/print_map.c recupmap.c -Lminilibx -lm -lmlx -lXext -lX11
