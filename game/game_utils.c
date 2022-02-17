@@ -6,11 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/17 09:57:34 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:16:15 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../so_long.h"
+
+/*
+Getting player position
+*/
 
 void	get_player_position(struct s_Map *map_ptr)
 {
@@ -34,6 +38,10 @@ void	get_player_position(struct s_Map *map_ptr)
         y++;
     }
 }
+
+/*
+Getting number of items
+*/
 
 int	get_number_of_items(struct s_Map *map_ptr)
 {
