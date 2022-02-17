@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/17 12:01:20 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:48:30 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,9 @@ char	*ft_strcpy(char *dest, char *src);
 void	ft_init_game(struct s_Map *map_ptr);
 void	ft_game_inputs(struct s_Map *map_ptr);
 int 	handle_key(int keycode, struct s_Map *map_ptr);
+void    ft_move_right(struct s_Map *map_ptr);
+void    ft_move_left(struct s_Map *map_ptr);
+void    ft_move_up(struct s_Map *map_ptr);
+void    ft_move_down(struct s_Map *map_ptr);
 
 #endif
