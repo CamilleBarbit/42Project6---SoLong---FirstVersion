@@ -6,11 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/16 11:44:55 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:14:50 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+/*
+Function to check file (2nd argument)
+*/
 
 int	ft_check_file_name(char *file_name)
 {
