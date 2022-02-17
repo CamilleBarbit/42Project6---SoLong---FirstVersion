@@ -6,11 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/16 14:59:15 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:15:26 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+/*
+Function checking that map is surrounded by '1's
+*/
 
 int	ft_check_map_walls(struct s_Map *map_ptr)
 {
@@ -60,6 +64,10 @@ static int	ft_count_char(char *str, char c)
 	return (count);
 }
 
+/*
+Function counting starting position, exit and items to collect
+*/
+
 int	ft_check_map_char(struct s_Map *map_ptr)
 {
 	int	y;
@@ -80,6 +88,10 @@ int	ft_check_map_char(struct s_Map *map_ptr)
 	return (0);
 }
 
+/*
+Function checking that my map is rectangle
+*/
+
 int	ft_check_map_form(struct s_Map *map_ptr)
 {
 	int		tempo;
@@ -97,6 +109,10 @@ int	ft_check_map_form(struct s_Map *map_ptr)
 	}
 	return (0);
 }
+
+/*
+Checking all errors
+*/
 
 int	ft_check_all_errors(struct s_Map *map_ptr)
 {
