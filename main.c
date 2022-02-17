@@ -6,14 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/16 15:13:45 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:14:44 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/* Je fais une fonction qui remplit les variables
-que j'ai dans ma structure */
+/* 
+Filling my structure with basic variables
+*/
 
 void	ft_filler_basics(s_Map *map_ptr, char *str)
 {
@@ -41,8 +42,7 @@ int	main(int argc, char **argv)
 		if (ft_check_all_errors(map_ptr) == 1)
 			return (free(map_ptr), 1);
 		ft_init_game(map_ptr);
-		//mlx_key_hook(map_ptr->mlx_window, key_hook, map_ptr);
-		// mlx_mouse_hook(map_ptr->mlx_window, handle_mouse, map_ptr);
+		ft_game_inputs(map_ptr);
 		mlx_loop(map_ptr->mlx_ptr);
 	}
 	else
