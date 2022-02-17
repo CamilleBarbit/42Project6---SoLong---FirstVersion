@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/17 11:51:04 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:01:20 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ struct  s_Map
 	void	*mlx_player; //défini dans ft_associate_files_to_images
 	void	*mlx_items; //défini dans ft_associate_files_to_images
 	void	*mlx_empty_spaces; //défini dans ft_associate_files_to_images
-	void	ft_game_inputs(struct s_Map *map_ptr);
 	char	map_title[100]; //défini dans filler
 	int		size_x; //défini dans filler
 	int		count_mouv;
@@ -74,6 +73,7 @@ int		ft_check_file_name(char *file_name);
 int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
 void	ft_init_game(struct s_Map *map_ptr);
+void	ft_game_inputs(struct s_Map *map_ptr);
 int 	handle_key(int keycode, struct s_Map *map_ptr);
 
 #endif
