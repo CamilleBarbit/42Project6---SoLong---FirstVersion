@@ -6,11 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:47:07 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/17 10:30:02 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/17 12:14:40 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+/*
+Function to associate a file to an image
+*/
 
 void	ft_associate_files_to_images(struct s_Map *map_ptr)
 {
@@ -31,6 +35,10 @@ void	ft_associate_files_to_images(struct s_Map *map_ptr)
 		printf("Error\nFile could not be converted into image!");
 }
 
+/* 
+Initializing the game
+*/
+
 void	ft_init_game(struct s_Map *map_ptr)
 {
     map_ptr->mlx_ptr = mlx_init();
@@ -41,5 +49,4 @@ void	ft_init_game(struct s_Map *map_ptr)
 		printf("Error\nFailed to create a new window!");
 	ft_associate_files_to_images(map_ptr);
 	ft_draw_map(map_ptr);
-	//mlx_key_hook(map_ptr->mlx_window, handle_key, map_ptr);
 }
