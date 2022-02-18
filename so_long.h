@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/17 14:37:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/18 11:27:33 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ struct  s_Map
 	char	**map_tab; //défini dans filler
 	char	*file_name; //défini dans filler
 	int		map_size; //défini dans filler
-	int		player_position_x; //défini dans check_map_char
-	int		player_position_y; //défini dans check_map_char
+	int		player_position_x; //défini dans init_game
+	int		player_position_y; //défini dans init_game
 	void	*mlx_ptr; //défini dans ft_init_game
 	void	*mlx_window; //défini dans ft_init_game
 	void	*mlx_exit; //défini dans ft_associate_files_to_images
@@ -40,11 +40,14 @@ struct  s_Map
 	char	map_title[100]; //défini dans filler
 	int		size_x; //défini dans filler
 	int		count_mouv;
-	int		count_items; //défini dans check_map_char
-	int		total_items;
-	int		width;
-	int		heigth;
+	int		remaining_items;
+	int		total_items; //définir dans check_map_char
 };
+
+/* PIXELS PER IMAGE */
+
+# define WIDTH 32
+# define HEIGTH 32
 
 /* KEY CODES */
 
