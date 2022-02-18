@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/18 11:27:33 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/18 11:41:13 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ struct  s_Map
 # define GO_DOWN 115
 # define GO_LEFT 97
 # define GO_RIGHT 100
+
+/* FILES ASSOCIATED WITH IMAGES */
+
+# define ITEMS_IM "images/items.xpm"
+# define PLAYER_IM "images/player.xpm"
+# define EXIT_IM "images/exit.xpm"
+# define EMPTY_IM "images/empty_spaces.xpm"
+# define WALLS_IM "images/walls.xpm"
+
 
 /* FUNCTIONS */
 
