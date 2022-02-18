@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkerror_map.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/17 12:15:26 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/18 10:42:49 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	ft_check_map_char(struct s_Map *map_ptr)
 	if (tab_count[0] != 1 || tab_count[1] < 1 || tab_count[2] < 1)
 		return (printf("Error\nSome characters are missing!\n"), 1);
 	get_player_position(map_ptr);
-	map_ptr->count_items = get_number_of_items(map_ptr);
+	get_number_of_items(map_ptr);
 	return (0);
 }
 
