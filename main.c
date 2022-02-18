@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/18 11:29:31 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/18 18:49:15 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Filling my structure with basic variables
 
 void	ft_filler_basics(s_Map *map_ptr, char *str)
 {
-	map_ptr->count_mouv = 0;
+	map_ptr->count_moves = 0;
 	map_ptr->total_items = 0;
-	map_ptr->remaining_items = 0;
-	map_ptr->player_position_x = 0;
-	map_ptr->player_position_y = 0;
+	map_ptr->items_collected = 0;
+	map_ptr->player_x = 0;
+	map_ptr->player_y = 0;
 	map_ptr->file_name = ft_sdup(str);
 	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name);
 	map_ptr->map_tab = ft_recup_map(map_ptr);
