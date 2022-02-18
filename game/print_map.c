@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:32:48 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/16 15:20:27 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/18 11:46:31 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	ft_draw_map(struct s_Map *map_ptr)
 		while (map_ptr->map_tab[y][x])
 		{
 			if (map_ptr->map_tab[y][x] == '1')
-				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_walls, 32 * x, 32 * y);
+				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_walls, WIDTH * x, HEIGTH * y);
 			else if (map_ptr->map_tab[y][x] == 'C')
-				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_items, 32 * x, 32 * y);
+				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_items, WIDTH * x, HEIGTH * y);
 			else if (map_ptr->map_tab[y][x] == 'P')
-				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_player, 32 * x, 32 * y);
+				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_player, WIDTH * x, HEIGTH * y);
 			else if (map_ptr->map_tab[y][x] == 'E')
-				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_exit, 32 * x, 32 * y);
+				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_exit, WIDTH * x, HEIGTH * y);
 			else if (map_ptr->map_tab[y][x] == '0')
-				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_empty_spaces, 32 * x, 32 * y);
+				mlx_put_image_to_window(map_ptr->mlx_ptr, map_ptr->mlx_window, map_ptr->mlx_empty_spaces, WIDTH * x, HEIGTH * y);
 			x++;
 		}
 		y++;
