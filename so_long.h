@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/18 11:41:13 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/18 18:49:04 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ struct  s_Map
 	char	**map_tab; //défini dans filler
 	char	*file_name; //défini dans filler
 	int		map_size; //défini dans filler
-	int		player_position_x; //défini dans init_game
-	int		player_position_y; //défini dans init_game
+	int		player_x; //défini dans init_game
+	int		player_y; //défini dans init_game
 	void	*mlx_ptr; //défini dans ft_init_game
 	void	*mlx_window; //défini dans ft_init_game
 	void	*mlx_exit; //défini dans ft_associate_files_to_images
@@ -39,8 +39,8 @@ struct  s_Map
 	void	*mlx_empty_spaces; //défini dans ft_associate_files_to_images
 	char	map_title[100]; //défini dans filler
 	int		size_x; //défini dans filler
-	int		count_mouv;
-	int		remaining_items;
+	int		count_moves;
+	int		items_collected;
 	int		total_items; //définir dans check_map_char
 };
 
