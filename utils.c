@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:02:19 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/09 13:06:04 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/18 12:11:04 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,6 @@ char	*ft_sdup(char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-void	ft_free_map(struct s_Map *map_ptr)
-{
-	int	y;
-
-	y = 0;
-	while (y < map_ptr->map_size)
-	{
-		free(map_ptr->map_tab[y]);
-		y++;
-	}
-	free(map_ptr->map_tab);
 }
 
 char	*ft_strcpy(char *dest, char *src)
