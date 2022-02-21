@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   recupmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/14 11:05:09 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/21 15:15:08 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
