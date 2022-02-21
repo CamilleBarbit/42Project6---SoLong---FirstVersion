@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 16:41:01 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:17:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	get_number_of_items(struct s_Map *map_ptr)
 		while (map_ptr->map_tab[y][x])
 		{
 			if (map_ptr->map_tab[y][x] == 'C')
-				map_ptr->total_items += 1;
+				map_ptr->total_items ++;
 			x++;
 		}
 		y++;
