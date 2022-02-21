@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 11:59:08 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/18 12:01:28 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/21 15:14:14 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,16 @@ void    ft_free_game(struct s_Map *map_ptr)
 	mlx_destroy_window(map_ptr->mlx_ptr, map_ptr->mlx_window);
     mlx_destroy_display(map_ptr->mlx_ptr);
 	free(map_ptr->mlx_ptr);
+}
+
+
+/*
+ENDING AND CLEARING ALL IN ANY CASE (FREEING STRUCT)
+*/
+
+void	ft_dealloc(struct s_Map *map_ptr)
+{
+	ft_free_map(map_ptr);
+	free(map_ptr->file_name);
+	free(map_ptr);
 }
