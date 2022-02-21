@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 17:19:41 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:37:06 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_handle_key(int keycode, struct s_Map *map_ptr)
 	else if (keycode == ESC)
 		ft_exit_game(map_ptr);
 	else
-		printf("Error\nCould not move the character!");
+		printf("Error\nCould not move the character!\n");
 	return (0);
 }
 
