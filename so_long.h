@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 15:15:17 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:11:49 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /* LIBRARIES */
 
-#include "mlx.h"
+#include "minilibx/mlx.h"
 #include "get_next_line/get_next_line.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -40,7 +40,7 @@ struct  s_Map
 	char	map_title[100]; //défini dans filler
 	int		size_x; //défini dans filler
 	int		count_moves;
-	int		items_collected;
+	int		collected_items;
 	int		total_items; //définir dans check_map_char
 	int		im_width;
 	int		im_heigth;
@@ -90,5 +90,7 @@ void    ft_move_left(struct s_Map *map_ptr);
 void    ft_move_up(struct s_Map *map_ptr);
 void    ft_move_down(struct s_Map *map_ptr);
 void	ft_dealloc(struct s_Map *map_ptr);
+void    ft_free_game(struct s_Map *map_ptr);
+int		ft_exit_game(struct s_Map *map_ptr);
 
 #endif
