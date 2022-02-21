@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 14:23:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:15:17 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ void    ft_move_right(struct s_Map *map_ptr);
 void    ft_move_left(struct s_Map *map_ptr);
 void    ft_move_up(struct s_Map *map_ptr);
 void    ft_move_down(struct s_Map *map_ptr);
+void	ft_dealloc(struct s_Map *map_ptr);
 
 #endif

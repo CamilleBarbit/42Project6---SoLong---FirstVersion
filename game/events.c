@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 13:44:52 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 15:06:50 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ Closing all images + Closing window
 int	ft_exit_game(struct s_Map *map_ptr)
 {
 	ft_free_game(map_ptr); //free game
-	ft_free_map(map_ptr); //free map
-	free(map_ptr); //free struct
 	printf("Thank you for playing! Come back soon!");
 	exit (1);	
 }
