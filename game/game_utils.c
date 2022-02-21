@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 14:16:45 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 16:41:01 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,4 @@ void	get_number_of_items(struct s_Map *map_ptr)
 		}
 		y++;
 	}
-}
-
-void	ft_get_items(struct s_Map *map_ptr)
-{
-	if (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_y] == 'C')
-		map_ptr->items_collected++;
-	map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] == 'P';
-}
-
-void	ft_redraw_map(struct s_Map *map_ptr, )
-{
-	map_ptr->count_moves++;
-	printf("You have made %d mouvements!", map_ptr->count_moves);
-	mlx_destroy_image()
 }
