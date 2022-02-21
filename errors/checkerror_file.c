@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/17 12:14:50 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 16:58:06 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,6 @@ int	ft_check_file_name(char *file_name)
 	}
 	return(printf("Error\nProblem with file name!\n"), 1);
 }
+
+
+//What happens if it is 'map/.ber'??
