@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 15:06:50 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:19:41 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,18 @@ Dealing with player moves
 
 int	ft_handle_key(int keycode, struct s_Map *map_ptr)
 {
-	if (keycode == GO_UP)
+	if ((keycode == GO_UP) && (map_ptr->map_tab[map_ptr->player_y - 1][map_ptr->player_x] != '1'))
 		ft_move_up(map_ptr);
-	else if (keycode == GO_LEFT)
+	else if ((keycode == GO_LEFT) && (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x - 1] != '1'))
 		ft_move_left(map_ptr);
-	else if (keycode == GO_DOWN)
+	else if ((keycode == GO_DOWN) && (map_ptr->map_tab[map_ptr->player_y + 1][map_ptr->player_x] != '1'))
 		ft_move_down(map_ptr);
-	else if (keycode == GO_RIGHT)
+	else if ((keycode == GO_RIGHT) && (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x + 1] != '1'))
 		ft_move_right(map_ptr);
 	else if (keycode == ESC)
 		ft_exit_game(map_ptr);
+	else
+		printf("Error\nCould not move the character!");
 	return (0);
 }
 
