@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 15:30:50 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:11:22 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_filler_basics(s_Map *map_ptr, char *str)
 {
 	map_ptr->count_moves = 0;
 	map_ptr->total_items = 0;
-	map_ptr->items_collected = 0;
+	map_ptr->collected_items = 0;
 	map_ptr->player_x = 0;
 	map_ptr->player_y = 0;
 	map_ptr->im_heigth = 80;
