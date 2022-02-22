@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/22 16:38:51 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/22 17:41:16 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		ft_check_map_form(struct s_Map *map_ptr);
 int		ft_check_walls(struct s_Map *map_ptr);
 int		ft_check_map_char(struct s_Map *map_ptr);
 void	ft_free_map(struct s_Map *map_ptr);
-void	ft_filler_basics(s_Map *map_ptr, char *str);
+int		ft_filler_basics(s_Map *map_ptr, char *str);
 void	ft_associate_files_to_images(struct s_Map *map_ptr);
 void	get_player_position(struct s_Map *map_ptr);
 void	get_number_of_items(struct s_Map *map_ptr);
