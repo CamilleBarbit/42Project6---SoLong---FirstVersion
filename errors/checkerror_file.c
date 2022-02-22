@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/22 16:42:55 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/22 17:21:24 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	ft_try_to_open_file(char *file_name)
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		return (printf("Error\nCould not open file!\n"), 1);
+	close (fd);
 	return (0);
 }
 
