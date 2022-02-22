@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 17:11:49 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/22 15:00:56 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ void    ft_move_down(struct s_Map *map_ptr);
 void	ft_dealloc(struct s_Map *map_ptr);
 void    ft_free_game(struct s_Map *map_ptr);
 int		ft_exit_game(struct s_Map *map_ptr);
+int		ft_try_to_open_file(char *file_name);
+int 	ft_check_all_errors_file_name(char *file_name);
 
 #endif
