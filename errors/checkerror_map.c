@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkerror_map.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/18 10:59:30 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/02/22 15:25:29 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ int	ft_check_map_form(struct s_Map *map_ptr)
 	while (y < map_ptr->map_size)
 	{
 		len = ft_len(map_ptr->map_tab[y]);
+		if (y == map_ptr->map_size - 1)
+			len += 1;
 		if (len != tempo)
 			return (printf("Error\nString lengths are not the same!\n"), 1);	
 		y++;
