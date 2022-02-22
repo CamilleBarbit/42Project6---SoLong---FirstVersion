@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/22 14:55:41 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/22 17:31:00 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_recup_map_size(char *file_name)
 
 	total_nb_line = 0;
 	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+		return (1);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -44,6 +46,8 @@ char	**ft_recup_map(struct s_Map *map_ptr) //je peux la passser en void
 	i = 0;
 	nb_line = map_ptr->map_size;
 	fd = open(map_ptr->file_name, O_RDONLY);
+	if (fd < 0)
+		return (NULL);
 	map_ptr->map_tab = malloc(sizeof(char *) * (nb_line + 1));
 	if (!map_ptr->map_tab)
 		return (NULL);
