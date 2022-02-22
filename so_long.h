@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/22 15:00:56 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/22 16:38:51 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_draw_map(struct s_Map *map_ptr);
 char	*ft_sdup(char *src);
 int		ft_len(char *str);
 int		ft_strcmp(char *s1, char *s2);
-int		ft_check_file_name(char *file_name);
+int		ft_check_file_name(char *file_name, int j, char *str, int count);
 int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
 void	ft_init_game(struct s_Map *map_ptr);
