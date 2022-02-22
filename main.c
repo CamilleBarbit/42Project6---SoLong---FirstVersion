@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 17:11:22 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/22 15:00:22 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 		map_ptr = malloc(sizeof(struct s_Map));
 		if (!map_ptr)
 			return (printf("Error\nFailed to allocate memory\n!"), 1);
-		if (ft_check_file_name(argv[1]) == 1)
+		if (ft_check_all_errors_file_name(argv[1]) == 1)
 			return (1);//ft_free_map(map_ptr), 1);
 		ft_filler_basics(map_ptr, argv[1]);
 		if (ft_check_all_errors(map_ptr) == 1)
