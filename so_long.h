@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 17:58:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 18:05:18 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ struct s_Map
 int		ft_recup_map_size(char *file_name);
 char	**ft_recup_map(t_map *map_ptr);
 int		ft_check_map_form(t_map *map_ptr);
-int		ft_check_walls(t_map *map_ptr);
+int		ft_check_map_walls(t_map *map_ptr, int x, int y);
 int		ft_check_map_char(t_map *map_ptr);
 void	ft_free_map(t_map *map_ptr);
 int		ft_filler_basics(t_map *map_ptr, char *str);
