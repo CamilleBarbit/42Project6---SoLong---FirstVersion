@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:47:07 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 17:26:57 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:59:51 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Associating each file to an image
 */
 
-void	ft_associate_files_to_images(struct s_Map *map_ptr)
+void	ft_associate_files_to_images(t_map *map_ptr)
 {
 	map_ptr->mlx_items = mlx_xpm_file_to_image(map_ptr->mlx_ptr, ITEMS_IM, &map_ptr->im_width, &map_ptr->im_heigth);
 	if (!map_ptr->mlx_items)
@@ -39,7 +39,7 @@ void	ft_associate_files_to_images(struct s_Map *map_ptr)
 Initializing the game
 */
 
-void	ft_init_game(struct s_Map *map_ptr)
+void	ft_init_game(t_map *map_ptr)
 {
 	get_player_position(map_ptr);
 	get_number_of_items(map_ptr);
