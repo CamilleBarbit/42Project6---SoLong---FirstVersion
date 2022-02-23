@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/22 17:40:47 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 15:01:22 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_filler_basics(s_Map *map_ptr, char *str)
 	map_ptr->collected_items = 0;
 	map_ptr->player_x = 0;
 	map_ptr->player_y = 0;
+	map_ptr->temp = 0;
 	map_ptr->im_heigth = 80;
 	map_ptr->im_width = 80;
 	map_ptr->file_name = ft_sdup(str);
