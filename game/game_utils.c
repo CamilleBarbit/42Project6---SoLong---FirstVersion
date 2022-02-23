@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 15:15:43 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:59:46 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Getting player position
 */
 
-void	get_player_position(struct s_Map *map_ptr)
+void	get_player_position(t_map *map_ptr)
 {
     int x;
     int y;
@@ -43,7 +43,7 @@ void	get_player_position(struct s_Map *map_ptr)
 Getting number of items
 */
 
-void	get_number_of_items(struct s_Map *map_ptr)
+void	get_number_of_items(t_map *map_ptr)
 {
 	int	x;
 	int	y;
@@ -68,7 +68,7 @@ void	get_number_of_items(struct s_Map *map_ptr)
 Function to ligthen the player's moves
 */
 
-void	ft_replace_letters(struct s_Map *map_ptr)
+void	ft_replace_letters(t_map *map_ptr)
 {
     if (map_ptr->temp == 0)
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = '0';
@@ -83,7 +83,7 @@ void	ft_replace_letters(struct s_Map *map_ptr)
 Function t lighten the player's moves
 */
 
-void	ft_making_the_move(struct s_Map *map_ptr)
+void	ft_making_the_move(t_map *map_ptr)
 {
 	map_ptr->count_moves++;
 	printf("You have made: %d moves!\n", map_ptr->count_moves);
