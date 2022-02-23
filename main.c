@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 15:01:22 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 15:24:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ int	ft_filler_basics(s_Map *map_ptr, char *str)
 	map_ptr->mlx_player = NULL;
 	map_ptr->mlx_items = NULL;
 	map_ptr->mlx_empty_spaces = NULL;
-	return(0);
+	return (0);
 }
-
 
 int	main(int argc, char **argv)
 {
