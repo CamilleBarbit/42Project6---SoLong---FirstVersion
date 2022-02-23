@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 15:16:33 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 15:23:22 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,32 @@
 
 /* LIBRARIES */
 
-#include "minilibx/mlx.h"
-#include "get_next_line/get_next_line.h"
-#include <stdlib.h>
-#include <stdio.h>
+# include "minilibx/mlx.h"
+# include "get_next_line/get_next_line.h"
+# include <stdlib.h>
+# include <stdio.h>
 
 /* STRUCTURE */
 
-typedef struct s_Map s_Map;
-struct  s_Map
+struct	s_map
 {
-	char	**map_tab; //défini dans filler
-	char	*file_name; //défini dans filler
-	int		map_size; //défini dans filler
-	int		player_x; //défini dans init_game
-	int		player_y; //défini dans init_game
-	void	*mlx_ptr; //défini dans ft_init_game
-	void	*mlx_window; //défini dans ft_init_game
-	void	*mlx_exit; //défini dans ft_associate_files_to_images
-	void	*mlx_walls; //défini dans ft_associate_files_to_images
-	void	*mlx_player; //défini dans ft_associate_files_to_images
-	void	*mlx_items; //défini dans ft_associate_files_to_images
-	void	*mlx_empty_spaces; //défini dans ft_associate_files_to_images
-	char	map_title[100]; //défini dans filler
-	int		size_x; //défini dans filler
+	char	**map_tab;
+	char	*file_name;
+	int		map_size;
+	int		player_x;
+	int		player_y;
+	void	*mlx_ptr;
+	void	*mlx_window;
+	void	*mlx_exit;
+	void	*mlx_walls;
+	void	*mlx_player;
+	void	*mlx_items;
+	void	*mlx_empty_spaces;
+	char	map_title[100];
+	int		size_x;
 	int		count_moves;
 	int		collected_items;
-	int		total_items; //définir dans check_map_char
+	int		total_items;
 	int		im_width;
 	int		im_heigth;
 	int		temp;
@@ -62,7 +61,6 @@ struct  s_Map
 # define EXIT_IM "images/exit.xpm"
 # define EMPTY_IM "images/empty_spaces.xpm"
 # define WALLS_IM "images/walls.xpm"
-
 
 /* FUNCTIONS */
 
@@ -85,16 +83,16 @@ int		ft_check_all_errors(struct s_Map *map_ptr);
 char	*ft_strcpy(char *dest, char *src);
 void	ft_init_game(struct s_Map *map_ptr);
 void	ft_game_inputs(struct s_Map *map_ptr);
-int 	handle_key(int keycode, struct s_Map *map_ptr);
-void    ft_move_right(struct s_Map *map_ptr);
-void    ft_move_left(struct s_Map *map_ptr);
-void    ft_move_up(struct s_Map *map_ptr);
-void    ft_move_down(struct s_Map *map_ptr);
+int		handle_key(int keycode, struct s_Map *map_ptr);
+void	ft_move_right(struct s_Map *map_ptr);
+void	ft_move_left(struct s_Map *map_ptr);
+void	ft_move_up(struct s_Map *map_ptr);
+void	ft_move_down(struct s_Map *map_ptr);
 void	ft_dealloc(struct s_Map *map_ptr);
-void    ft_free_game(struct s_Map *map_ptr);
+void	ft_free_game(struct s_Map *map_ptr);
 int		ft_exit_game(struct s_Map *map_ptr);
 int		ft_try_to_open_file(char *file_name);
-int 	ft_check_all_errors_file_name(char *file_name);
+int		ft_check_all_errors_file_name(char *file_name);
 void	ft_replace_letters(struct s_Map *map_ptr);
 void	ft_making_the_move(struct s_Map *map_ptr);
 
