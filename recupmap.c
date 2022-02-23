@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 15:24:58 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:57:07 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_recup_map_size(char *file_name)
 	return (total_nb_line);
 }
 
-char	**ft_recup_map(struct s_Map *map_ptr)
+char	**ft_recup_map(t_map *map_ptr)
 {
 	int	fd;
 	int	i;
