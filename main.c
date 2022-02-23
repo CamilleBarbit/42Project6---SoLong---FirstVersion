@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 15:24:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:58:48 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Filling my structure with basic variables
 */
 
-int	ft_filler_basics(s_Map *map_ptr, char *str)
+int	ft_filler_basics(t_map *map_ptr, char *str)
 {
 	map_ptr->count_moves = 0;
 	map_ptr->total_items = 0;
@@ -45,11 +45,11 @@ int	ft_filler_basics(s_Map *map_ptr, char *str)
 
 int	main(int argc, char **argv)
 {
-	s_Map	*map_ptr;
+	t_map	*map_ptr;
 
 	if (argc == 2)
 	{
-		map_ptr = malloc(sizeof(struct s_Map));
+		map_ptr = malloc(sizeof(t_map));
 		if (!map_ptr)
 			return (printf("Error\nFailed to allocate memory\n!"), 1);
 		if (ft_check_all_errors_file_name(argv[1]) == 1)
