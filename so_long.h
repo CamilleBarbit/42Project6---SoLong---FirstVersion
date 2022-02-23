@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/22 17:41:16 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 15:16:33 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ struct  s_Map
 	int		total_items; //définir dans check_map_char
 	int		im_width;
 	int		im_heigth;
+	int		temp;
 };
 
 /* KEY CODES */
@@ -94,5 +95,7 @@ void    ft_free_game(struct s_Map *map_ptr);
 int		ft_exit_game(struct s_Map *map_ptr);
 int		ft_try_to_open_file(char *file_name);
 int 	ft_check_all_errors_file_name(char *file_name);
+void	ft_replace_letters(struct s_Map *map_ptr);
+void	ft_making_the_move(struct s_Map *map_ptr);
 
 #endif
