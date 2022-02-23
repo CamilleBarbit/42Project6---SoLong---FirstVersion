@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 11:59:08 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 17:33:07 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:59:36 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Freeing map
 */
 
-void	ft_free_map(struct s_Map *map_ptr)
+void	ft_free_map(t_map *map_ptr)
 {
 	int	y;
 
@@ -33,7 +33,7 @@ void	ft_free_map(struct s_Map *map_ptr)
 Freeing game
 */
 
-void    ft_free_game(struct s_Map *map_ptr)
+void    ft_free_game(t_map *map_ptr)
 {
     mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_walls);
 	mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_items);
@@ -50,7 +50,7 @@ void    ft_free_game(struct s_Map *map_ptr)
 ENDING AND CLEARING ALL IN ANY CASE (FREEING STRUCT)
 */
 
-void	ft_dealloc(struct s_Map *map_ptr)
+void	ft_dealloc(t_map *map_ptr)
 {
 	ft_free_map(map_ptr);
 	free(map_ptr->file_name);
