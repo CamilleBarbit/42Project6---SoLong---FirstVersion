@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 17:37:06 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:59:41 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Closing all images + Closing window 
 */
 
-int	ft_exit_game(struct s_Map *map_ptr)
+int	ft_exit_game(t_map *map_ptr)
 {
 	ft_free_game(map_ptr); //free game
 	printf("Thank you for playing! Come back soon!");
@@ -27,7 +27,7 @@ int	ft_exit_game(struct s_Map *map_ptr)
 Dealing with player moves
 */
 
-int	ft_handle_key(int keycode, struct s_Map *map_ptr)
+int	ft_handle_key(int keycode, t_map *map_ptr)
 {
 	if ((keycode == GO_UP) && (map_ptr->map_tab[map_ptr->player_y - 1][map_ptr->player_x] != '1'))
 		ft_move_up(map_ptr);
@@ -48,7 +48,7 @@ int	ft_handle_key(int keycode, struct s_Map *map_ptr)
 Red cross + Keypress 
 */
 
-void	ft_game_inputs(struct s_Map *map_ptr)
+void	ft_game_inputs(t_map *map_ptr)
 {
 	mlx_hook(map_ptr->mlx_window, 33, 1L << 5, &ft_exit_game, map_ptr);
 	mlx_hook(map_ptr->mlx_window, 2, 1L << 0, &ft_handle_key, map_ptr);
