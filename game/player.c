@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 15:05:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 15:06:07 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void    ft_move_up(struct s_Map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'E';
 		map_ptr->temp = 0;
-		
 	}
 	map_ptr->player_y--;
 	if (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] == 'C')
