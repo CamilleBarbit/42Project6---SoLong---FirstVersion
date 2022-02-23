@@ -6,20 +6,20 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:02:19 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/22 16:13:23 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 15:26:18 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_len(char *str)
+int	ft_len(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 int	ft_strcmp(char *s1, char *s2)
