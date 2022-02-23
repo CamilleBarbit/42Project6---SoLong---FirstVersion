@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/22 17:30:33 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 17:59:28 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Function checking that map is surrounded by '1's
 */
 
-int	ft_check_map_walls(struct s_Map *map_ptr)
+int	ft_check_map_walls(t_map *map_ptr)
 {
 	int	x;
 	int	y;
@@ -68,7 +68,7 @@ static int	ft_count_char(char *str, char c)
 Function counting starting position, exit and items to collect
 */
 
-int	ft_check_map_char(struct s_Map *map_ptr)
+int	ft_check_map_char(t_map *map_ptr)
 {
 	int	y;
 	int	tab_count[3] = {0, 0, 0};
@@ -90,7 +90,7 @@ int	ft_check_map_char(struct s_Map *map_ptr)
 Function checking that my map is rectangle
 */
 
-int	ft_check_map_form(struct s_Map *map_ptr)
+int	ft_check_map_form(t_map *map_ptr)
 {
 	int		tempo;
 	int		len;
@@ -114,7 +114,7 @@ int	ft_check_map_form(struct s_Map *map_ptr)
 Checking all errors
 */
 
-int	ft_check_all_errors(struct s_Map *map_ptr)
+int	ft_check_all_errors(t_map *map_ptr)
 {
 	if (ft_check_map_form(map_ptr) == 1)
 		return (1);
