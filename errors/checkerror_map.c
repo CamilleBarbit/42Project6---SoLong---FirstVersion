@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/23 17:59:28 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 18:16:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@
 Function checking that map is surrounded by '1's
 */
 
-int	ft_check_map_walls(t_map *map_ptr)
+int	ft_check_map_walls(t_map *map_ptr, int x, int y)
 {
-	int	x;
-	int	y;
-
-	x = 0;
 	while (map_ptr->map_tab[0][x + 1])
 	{
 		if (map_ptr->map_tab[0][x] != '1')
@@ -38,8 +34,8 @@ int	ft_check_map_walls(t_map *map_ptr)
 	y = 1;
 	while (y <= map_ptr->map_size - 2)
 	{
-		x = ft_len(map_ptr->map_tab[y]); 
-		if(map_ptr->map_tab[y][0] != '1' || map_ptr->map_tab[y][x - 2] != '1')
+		x = ft_len(map_ptr->map_tab[y]);
+		if (map_ptr->map_tab[y][0] != '1' || map_ptr->map_tab[y][x - 2] != '1')
 			return (printf("Error\nWalls are missing!\n"), 1);
 		y++;
 	}
@@ -71,8 +67,11 @@ Function counting starting position, exit and items to collect
 int	ft_check_map_char(t_map *map_ptr)
 {
 	int	y;
-	int	tab_count[3] = {0, 0, 0};
+	int	tab_count[3];
 
+	tab_count[0] = 0;
+	tab_count[1] = 0;
+	tab_count[2] = 0;
 	y = 1;
 	while (y <= map_ptr->map_size - 2)
 	{
@@ -104,7 +103,7 @@ int	ft_check_map_form(t_map *map_ptr)
 		if (y == map_ptr->map_size - 1)
 			len += 1;
 		if (len != tempo)
-			return (printf("Error\nString lengths are not the same!\n"), 1);	
+			return (printf("Error\nString lengths are not the same!\n"), 1);
 		y++;
 	}
 	return (0);
@@ -118,7 +117,7 @@ int	ft_check_all_errors(t_map *map_ptr)
 {
 	if (ft_check_map_form(map_ptr) == 1)
 		return (1);
-	if (ft_check_map_walls(map_ptr) == 1)
+	if (ft_check_map_walls(map_ptr, 0, 1) == 1)
 		return (1);
 	if (ft_check_map_char(map_ptr) == 1)
 		return (1);
