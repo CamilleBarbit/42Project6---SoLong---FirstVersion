@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:32:48 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/21 14:27:15 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/23 18:00:08 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_draw_map(struct s_Map *map_ptr)
+void	ft_draw_map(t_map *map_ptr)
 {
 	int		x;
 	int		y;
