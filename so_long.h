@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 18:05:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:27:30 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int		ft_try_to_open_file(char *file_name);
 int		ft_check_all_errors_file_name(char *file_name);
 void	ft_replace_letters(t_map *map_ptr);
 void	ft_making_the_move(t_map *map_ptr);
+void	ft_function_to_draw(t_map *map_ptr, void *ptr_file, int x, int y);
 
 #endif
