@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 11:59:08 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 17:59:36 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:05:35 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,17 @@ void	ft_free_map(t_map *map_ptr)
 Freeing game
 */
 
-void    ft_free_game(t_map *map_ptr)
+void	ft_free_game(t_map *map_ptr)
 {
-    mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_walls);
+	mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_walls);
 	mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_items);
 	mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_player);
 	mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_exit);
 	mlx_destroy_image(map_ptr->mlx_ptr, map_ptr->mlx_empty_spaces);
 	mlx_destroy_window(map_ptr->mlx_ptr, map_ptr->mlx_window);
-    mlx_destroy_display(map_ptr->mlx_ptr);
+	mlx_destroy_display(map_ptr->mlx_ptr);
 	free(map_ptr->mlx_ptr);
 }
-
 
 /*
 ENDING AND CLEARING ALL IN ANY CASE (FREEING STRUCT)
