@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/24 16:27:13 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/24 17:28:11 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -rf
 
 CFLAGS = -Wall -Wextra -Werror
 
-MLXFLAGS = -lm -lXext -lX11
+MLXFLAGS = -Lminilibx -lm -lmlx -lXext -lX11
 
 PRINTF_PATH = ft_printf
 
@@ -28,9 +28,9 @@ FT_PRINTF = ft_printf/libftprintf.a
 
 MINILIBX_PATH = minilibx
 
-FT_MINILIBX = ./minilibx/libmlx.a
+FT_MINILIBX = minilibx/libmlx_Linux.a
 
-MINILIX = libmlx.a
+MINILIBX = libmlx_Linux.a
 
 C_FILES = srcs/recupmap.c \
 			srcs/utils.c \
@@ -50,28 +50,27 @@ O_FILES = ${C_FILES:.c=.o}
 
 all: ${NAME}
 
-%.o: ${C_FILES}
-	${CC} ${CFLAGS} -I/usr/include -Iminilibx -03 -c $< -o $@
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} : ${O_FILES} ${PRINTF} ${MINILIBX}
-	${CC} ${CFLAGS} ${O_FILES} ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME} 
+	${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME} 
 
 
 ${PRINTF} :
 	(cd ${PRINTF_PATH} && ${MAKE})
 	cp ${PRINTF_PATH}/${PRINTF} .
 
-${MINILIX} :
-	(cd ${MINILIBX} && ${MAKE})
-	cp ${MINILIBX_PATH}/${MINILIX} .
+${MINILIBX} :
+	(cd ${MINILIBX_PATH} && ${MAKE})
+	cp ${MINILIBX_PATH}/${MINILIBX} .
 
 clean: 
-	${RM} ${O_FILES}
+	${RM} ${O_FILES} 
 
 fclean: clean
-	${RM} ${NAME} ${PRINTF} ${MINILIX}
+	${RM} ${NAME} ${PRINTF} ${MINILIBX}
 	cd ${PRINTF_PATH} && ${MAKE} $@
-	cd ${MINILIBX_PATH} && ${MAKE} $@
 
 re: fclean all
 
