@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/24 17:28:11 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/24 17:31:44 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ clean:
 fclean: clean
 	${RM} ${NAME} ${PRINTF} ${MINILIBX}
 	cd ${PRINTF_PATH} && ${MAKE} $@
+	cd ${MINILIBX_PATH} && ${MAKE} $@
 
 re: fclean all
 
