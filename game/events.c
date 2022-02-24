@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/24 14:09:03 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 15:00:36 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_exit_game(t_map *map_ptr)
 {
 	ft_free_game(map_ptr);
 	printf("Thank you for playing! Come back soon!");
+	ft_dealloc(map_ptr);
 	exit (1);
 }
 
