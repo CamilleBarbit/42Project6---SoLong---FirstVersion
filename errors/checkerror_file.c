@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/24 14:44:29 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:45:47 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_check_file_name(char *file_name, int j, char *str, int count)
 }
 
 /*
-Function to check if it is possible to open my <.ber >
+Function to check if my <.ber > exists
 */
 
 int	ft_try_to_open_file(char *file_name)
