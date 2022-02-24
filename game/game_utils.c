@@ -6,11 +6,11 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 17:59:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:12:19 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../so_long.h"
+#include "../so_long.h"
 
 /*
 Getting player position
@@ -18,25 +18,24 @@ Getting player position
 
 void	get_player_position(t_map *map_ptr)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    y = 0;
-    while (map_ptr->map_tab[y])
-    {
-        x = 0;
-        while (map_ptr->map_tab[y][x])
-        {
-            if (map_ptr->map_tab[y][x] == 'P')
-            {
-				
-                map_ptr->player_x = x;
-                map_ptr->player_y = y;
-            }
-            x++;
-        }
-        y++;
-    }
+	y = 0;
+	while (map_ptr->map_tab[y])
+	{
+		x = 0;
+		while (map_ptr->map_tab[y][x])
+		{
+			if (map_ptr->map_tab[y][x] == 'P')
+			{
+				map_ptr->player_x = x;
+				map_ptr->player_y = y;
+			}
+			x++;
+		}
+		y++;
+	}
 }
 
 /*
@@ -63,14 +62,13 @@ void	get_number_of_items(t_map *map_ptr)
 	}
 }
 
-
 /*
 Function to ligthen the player's moves
 */
 
 void	ft_replace_letters(t_map *map_ptr)
 {
-    if (map_ptr->temp == 0)
+	if (map_ptr->temp == 0)
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = '0';
 	if (map_ptr->temp == 1)
 	{
