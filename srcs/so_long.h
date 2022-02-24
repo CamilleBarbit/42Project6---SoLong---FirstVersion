@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:06 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/24 14:40:30 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 17:23:38 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 /* LIBRARIES */
 
-# include "minilibx/mlx.h"
-# include "get_next_line/get_next_line.h"
+# include "../minilibx/mlx.h"
+# include "../get_next_line/get_next_line.h"
+# include "../ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <stdio.h>
 
