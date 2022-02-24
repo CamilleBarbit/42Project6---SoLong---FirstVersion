@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 09:51:01 by cbarbit           #+#    #+#             */
-/*   Updated: 2021/12/13 17:00:51 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 17:25:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <ctype.h>
 # include <stdarg.h>
 # include <stdio.h>
+
+# define BUFFER_SIZE 4
 
 int		ft_checkendofline(char *buffer_save);
 size_t	ft_strlen(char *str);
