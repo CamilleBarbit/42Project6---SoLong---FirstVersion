@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/24 14:45:47 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 17:32:47 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Function to check file (2nd argument)
 int	ft_check_file_name(char *file_name, int j, char *str, int count)
 {
 	if (--j < 4)
-		return (printf("Error\nFile is not long enough!\n"), 1);
+		return (printf("Error\nFile name is not long enough!\n"), 1);
 	while (j >= 0 && file_name[j] != '/')
 	{
 		if (file_name[j] == '.')
