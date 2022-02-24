@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 18:00:00 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:17:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Functions ensuring that player can move
 */
 
-void    ft_move_up(t_map *map_ptr)
+void	ft_move_up(t_map *map_ptr)
 {
 	ft_replace_letters(map_ptr);
 	map_ptr->player_y--;
@@ -44,8 +44,7 @@ void    ft_move_up(t_map *map_ptr)
 	ft_making_the_move(map_ptr);
 }
 
-
-void    ft_move_left(t_map *map_ptr)
+void	ft_move_left(t_map *map_ptr)
 {
 	ft_replace_letters(map_ptr);
 	map_ptr->player_x--;
@@ -73,7 +72,7 @@ void    ft_move_left(t_map *map_ptr)
 	ft_making_the_move(map_ptr);
 }
 
-void    ft_move_down(t_map *map_ptr)
+void	ft_move_down(t_map *map_ptr)
 {
 	ft_replace_letters(map_ptr);
 	map_ptr->player_y++;
@@ -101,7 +100,7 @@ void    ft_move_down(t_map *map_ptr)
 	ft_making_the_move(map_ptr);
 }
 
-void    ft_move_right(t_map *map_ptr)
+void	ft_move_right(t_map *map_ptr)
 {
 	ft_replace_letters(map_ptr);
 	map_ptr->player_x++;
