@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:45:31 by cbarbit           #+#    #+#             */
-/*   Updated: 2021/12/07 09:15:22 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 16:21:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putnbr_hexa(unsigned int nb, char *base)
 
 void	ft_putnbr_unsigned(unsigned int nb)
 {
-	if (nb >= 0 && nb < 10)
+	if (nb > 0 && nb < 10)
 	{
 		ft_putchar(nb + '0');
 	}
