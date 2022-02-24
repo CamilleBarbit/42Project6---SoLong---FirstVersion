@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/24 14:40:14 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/24 14:44:29 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	ft_check_file_name(char *file_name, int j, char *str, int count)
 	return (printf("Error\nFile extension is not <.ber>!\n"), 1);
 }
 
+/*
+Function to check if it is possible to open my <.ber >
+*/
+
 int	ft_try_to_open_file(char *file_name)
 {
 	int	fd;
@@ -53,6 +57,10 @@ int	ft_try_to_open_file(char *file_name)
 	close (fd);
 	return (0);
 }
+
+/*
+Function to verify if the <.xpm > files exist
+*/
 
 int	ft_try_to_open_xpm(void)
 {
