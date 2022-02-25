@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 16:24:28 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 16:34:34 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ ${NAME} : ${O_FILES} ${PRINTF} ${MINILIBX}
 bonus: ${NAME_BONUS}
 
 ${NAME_BONUS}: ${O_FILES_BONUS} ${PRINTF} ${MINILIBX}
-	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME_BONUS}
+	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS}
 	
 ${PRINTF} :
 	@(cd ${PRINTF_PATH} && ${MAKE})
