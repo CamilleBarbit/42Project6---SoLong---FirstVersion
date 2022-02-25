@@ -6,12 +6,12 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 16:34:34 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 17:15:46 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-NAME_BONUS = solong_bonus
+NAME_BONUS = so_long_bonus
 
 CC = gcc
 
@@ -74,7 +74,7 @@ ${NAME} : ${O_FILES} ${PRINTF} ${MINILIBX}
 bonus: ${NAME_BONUS}
 
 ${NAME_BONUS}: ${O_FILES_BONUS} ${PRINTF} ${MINILIBX}
-	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS}
+	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME_BONUS}
 	
 ${PRINTF} :
 	@(cd ${PRINTF_PATH} && ${MAKE})
@@ -88,7 +88,7 @@ clean:
 	@${RM} ${O_FILES} ${O_FILES_BONUS}
 
 fclean: clean
-	@${RM} ${NAME} ${PRINTF} ${MINILIBX}
+	@${RM} ${NAME} ${NAME_BONUS} ${PRINTF} ${MINILIBX}
 	@cd ${PRINTF_PATH} && ${MAKE} $@
 	@cd ${MINILIBX_PATH} && ${MAKE} $<
 	@rm -rf ${FT_MINILIBX}
