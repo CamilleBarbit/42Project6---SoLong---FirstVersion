@@ -6,11 +6,11 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/24 17:31:44 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 14:26:58 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long
+NAME = solong
 
 CC = gcc
 
@@ -51,27 +51,29 @@ O_FILES = ${C_FILES:.c=.o}
 all: ${NAME}
 
 %.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@
+	@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} : ${O_FILES} ${PRINTF} ${MINILIBX}
-	${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME} 
+	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME} 
 
 
 ${PRINTF} :
-	(cd ${PRINTF_PATH} && ${MAKE})
-	cp ${PRINTF_PATH}/${PRINTF} .
+	@(cd ${PRINTF_PATH} && ${MAKE})
+	@cp ${PRINTF_PATH}/${PRINTF} .
 
 ${MINILIBX} :
-	(cd ${MINILIBX_PATH} && ${MAKE})
-	cp ${MINILIBX_PATH}/${MINILIBX} .
+	@(cd ${MINILIBX_PATH} && ${MAKE})
+	@cp ${MINILIBX_PATH}/${MINILIBX} .
 
 clean: 
-	${RM} ${O_FILES} 
+	@${RM} ${O_FILES} 
 
 fclean: clean
-	${RM} ${NAME} ${PRINTF} ${MINILIBX}
-	cd ${PRINTF_PATH} && ${MAKE} $@
-	cd ${MINILIBX_PATH} && ${MAKE} $@
+	@${RM} ${NAME} ${PRINTF} ${MINILIBX}
+	@cd ${PRINTF_PATH} && ${MAKE} $@
+	@cd ${MINILIBX_PATH} && ${MAKE} $<
+	@rm -rf ${FT_MINILIBX}
+	@rm -rf ./minilibx/libmlx.a
 
 re: fclean all
 
