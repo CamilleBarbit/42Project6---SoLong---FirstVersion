@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 16:21:41 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 16:24:28 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,14 +50,14 @@ C_FILES = srcs/recupmap.c \
 C_FILES_BONUS = srcs_bonus/recupmap_bonus.c \
 			srcs_bonus/utils_bonus.c \
 			srcs_bonus/main_bonus.c \
-			srcs_bonus/errors/checkerror_file_bonus.c \
-			srcs_bonus/errors/checkerror_map_bonus.c \
-			srcs_bonus/game/game_utils_bonus.c \
-			srcs_bonus/game/init_game_bonus.c \
-			srcs_bonus/game/player_bonus.c \
-			srcs_bonus/game/print_map_bonus.c \
-			srcs_bonus/game/events_bonus.c \
-			srcs_bonus/game/end_game_bonus.c \
+			srcs_bonus/errors_bonus/checkerror_file_bonus.c \
+			srcs_bonus/errors_bonus/checkerror_map_bonus.c \
+			srcs_bonus/game_bonus/game_utils_bonus.c \
+			srcs_bonus/game_bonus/init_game_bonus.c \
+			srcs_bonus/game_bonus/player_bonus.c \
+			srcs_bonus/game_bonus/print_map_bonus.c \
+			srcs_bonus/game_bonus/events_bonus.c \
+			srcs_bonus/game_bonus/end_game_bonus.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
