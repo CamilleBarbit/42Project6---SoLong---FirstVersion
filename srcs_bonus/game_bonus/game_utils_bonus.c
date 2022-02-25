@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/25 16:30:02 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/25 17:36:11 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,16 +121,18 @@ Function to lighten the player's moves
 
 void	ft_making_the_move(t_map *map_ptr)
 {
-	char *str1;
-	char *str2;
+	char	*str1;
+	char	*str2;
+	char	*str3;	
 	
 	str1 = "You have made: ";
-	str2 = ft_itoa(map_ptr->count_moves++);
+	str3 = " steps!";
 	map_ptr->count_moves++;
-	printf("You have made: %d moves!\n", map_ptr->count_moves);
-	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 1, 1, 0x224DDE, str1);
-	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 2, 1, 0x224DDE, str2);
+	str2 = ft_itoa(map_ptr->count_moves);
 	ft_draw_map(map_ptr);
-	free(str1);
+	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 1, 10, 0xFFFFFF, str1);
+	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 90, 10, 0xFFFFFF, str2);
+	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 100, 10, 0xFFFFFF, str3);
+	printf("You have made: %d moves!!!!!\n", map_ptr->count_moves);
 	free(str2);
 }
