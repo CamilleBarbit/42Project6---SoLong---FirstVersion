@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 17:30:37 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 17:54:35 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,8 @@ C_FILES = srcs/recupmap.c \
 			srcs/game/print_map.c \
 			srcs/game/events.c \
 			srcs/game/end_game.c \
+			get_next_line/get_next_line.c \
+			get_next_line/get_next_line_utils.c \
 
 C_FILES_BONUS = srcs_bonus/recupmap_bonus.c \
 			srcs_bonus/utils_bonus.c \
