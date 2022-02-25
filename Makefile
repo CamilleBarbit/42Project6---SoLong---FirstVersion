@@ -6,11 +6,12 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 14:26:58 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 14:50:30 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = solong
+NAME_BONUS = solong_bonus
 
 CC = gcc
 
@@ -46,7 +47,21 @@ C_FILES = srcs/recupmap.c \
 			srcs/game/events.c \
 			srcs/game/end_game.c \
 
+C_FILES_BONUS = srcs_bonus/recupmap_bonus.c \
+			srcs_bonus/utils_bonus.c \
+			srcs_bonus/main_bonus.c \
+			srcs_bonus/errors/checkerror_file_bonus.c \
+			srcs_bonus/errors/checkerror_map_bonus.c \
+			srcs_bonus/game/game_utils_bonus.c \
+			srcs_bonus/game/init_game_bonus.c \
+			srcs_bonus/game/player_bonus.c \
+			srcs_bonus/game/print_map_bonus.c \
+			srcs_bonus/game/events_bonus.c \
+			srcs_bonus/game/end_game_bonus.c \
+
+
 O_FILES = ${C_FILES:.c=.o}
+O_FILES_BONUS = ${C_FILES_BONUS:.c=.o}
 
 all: ${NAME}
 
@@ -56,7 +71,11 @@ all: ${NAME}
 ${NAME} : ${O_FILES} ${PRINTF} ${MINILIBX}
 	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME} 
 
+bonus: ${NAME_BONUS}
 
+${NAME_BONUS}: ${O_FILES_BONUS} ${PRINTF} ${MINILIBX}
+	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME_BONUS}
+	
 ${PRINTF} :
 	@(cd ${PRINTF_PATH} && ${MAKE})
 	@cp ${PRINTF_PATH}/${PRINTF} .
@@ -66,7 +85,7 @@ ${MINILIBX} :
 	@cp ${MINILIBX_PATH}/${MINILIBX} .
 
 clean: 
-	@${RM} ${O_FILES} 
+	@${RM} ${O_FILES} ${O_FILES_BONUS}
 
 fclean: clean
 	@${RM} ${NAME} ${PRINTF} ${MINILIBX}
