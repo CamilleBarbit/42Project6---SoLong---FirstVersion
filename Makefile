@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 17:15:46 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 17:30:37 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,6 @@ MINILIBX = libmlx_Linux.a
 C_FILES = srcs/recupmap.c \
 			srcs/utils.c \
 			srcs/main.c \
-			get_next_line/get_next_line.c \
-			get_next_line/get_next_line_utils.c \
 			srcs/errors/checkerror_file.c \
 			srcs/errors/checkerror_map.c \
 			srcs/game/game_utils.c \
@@ -58,6 +56,8 @@ C_FILES_BONUS = srcs_bonus/recupmap_bonus.c \
 			srcs_bonus/game_bonus/print_map_bonus.c \
 			srcs_bonus/game_bonus/events_bonus.c \
 			srcs_bonus/game_bonus/end_game_bonus.c \
+			get_next_line/get_next_line.c \
+			get_next_line/get_next_line_utils.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
@@ -74,7 +74,7 @@ ${NAME} : ${O_FILES} ${PRINTF} ${MINILIBX}
 bonus: ${NAME_BONUS}
 
 ${NAME_BONUS}: ${O_FILES_BONUS} ${PRINTF} ${MINILIBX}
-	@${CC} ${O_FILES} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME_BONUS}
+	@${CC} ${O_FILES_BONUS} -Imlx -Iminilibx ${FT_PRINTF} ${FT_MINILIBX} ${MLXFLAGS} -o ${NAME_BONUS}
 	
 ${PRINTF} :
 	@(cd ${PRINTF_PATH} && ${MAKE})
