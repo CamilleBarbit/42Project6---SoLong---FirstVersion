@@ -6,11 +6,26 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/25 15:47:58 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/25 16:20:11 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
+
+/*
+Function to ligthen the player's moves
+*/
+
+void	ft_replace_letters(t_map *map_ptr)
+{
+	if (map_ptr->temp == 0)
+		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = '0';
+	if (map_ptr->temp == 1)
+	{
+		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'E';
+		map_ptr->temp = 0;
+	}
+}
 
 /*
 Closing all images + Closing window 
