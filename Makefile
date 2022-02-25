@@ -6,11 +6,11 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 14:50:30 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/25 16:21:41 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = solong
+NAME = so_long
 NAME_BONUS = solong_bonus
 
 CC = gcc
