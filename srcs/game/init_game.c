@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:47:07 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/24 14:15:25 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/25 16:38:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,11 @@ void	ft_init_game(t_map *map_ptr)
 	get_number_of_items(map_ptr);
 	map_ptr->mlx_ptr = mlx_init();
 	if (!map_ptr->mlx_ptr)
+	{
 		printf("Error\nConnection could not be established!\n");
+		ft_dealloc(map_ptr);
+		exit (1);
+	}
 	map_ptr->mlx_window = mlx_new_window
 		(map_ptr->mlx_ptr, map_ptr->size_x * map_ptr->im_width,
 			map_ptr->map_size * map_ptr->im_heigth, map_ptr->map_title);

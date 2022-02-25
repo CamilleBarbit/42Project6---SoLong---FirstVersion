@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/24 14:12:19 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/25 16:08:57 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_replace_letters(t_map *map_ptr)
 }
 
 /*
-Function t lighten the player's moves
+Function to lighten the player's moves
 */
 
 void	ft_making_the_move(t_map *map_ptr)
