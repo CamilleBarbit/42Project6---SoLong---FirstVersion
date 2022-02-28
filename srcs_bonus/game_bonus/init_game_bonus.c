@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:47:07 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/28 10:14:55 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:23:15 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ void	ft_associate_files_to_images(t_map *map_ptr)
 	map_ptr->mlx_items = mlx_xpm_file_to_image
 		(map_ptr->mlx_ptr, ITEMS_IM, &map_ptr->im_width, &map_ptr->im_heigth);
 	if (!map_ptr->mlx_items)
-		return (ft_printf("Error\nFile could not be converted into image!\n"));
+		ft_printf("Error\nFile could not be converted into image!\n");
 	map_ptr->mlx_player = mlx_xpm_file_to_image
 		(map_ptr->mlx_ptr, PLAYER_IM, &map_ptr->im_width, &map_ptr->im_heigth);
 	if (!map_ptr->mlx_player)
-		return (ft_printf("Error\nFile could not be converted into image!\n"));
+		ft_printf("Error\nFile could not be converted into image!\n");
 	map_ptr->mlx_exit = mlx_xpm_file_to_image
 		(map_ptr->mlx_ptr, EXIT_IM, &map_ptr->im_width, &map_ptr->im_heigth);
 	if (!map_ptr->mlx_exit)
-		return (ft_printf("Error\nFile could not be converted into image!\n"));
+		ft_printf("Error\nFile could not be converted into image!\n");
 	map_ptr->mlx_empty_spaces = mlx_xpm_file_to_image
 		(map_ptr->mlx_ptr, EMPTY_IM, &map_ptr->im_width, &map_ptr->im_heigth);
 	if (!map_ptr->mlx_empty_spaces)
-		return (ft_printf("Error\nFile could not be converted into image!\n"));
+		ft_printf("Error\nFile could not be converted into image!\n");
 	map_ptr->mlx_walls = mlx_xpm_file_to_image
 		(map_ptr->mlx_ptr, WALLS_IM, &map_ptr->im_width, &map_ptr->im_heigth);
 	if (!map_ptr->mlx_walls)
-		return (ft_printf("Error\nFile could not be converted into image!\n"));
+		ft_printf("Error\nFile could not be converted into image!\n");
 }
 
 /* 
