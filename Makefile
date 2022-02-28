@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 12:32:53 by camillebarb       #+#    #+#              #
-#    Updated: 2022/02/25 17:54:35 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/02/28 11:09:10 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ ${PRINTF} :
 	@cp ${PRINTF_PATH}/${PRINTF} .
 
 ${MINILIBX} :
-	@(cd ${MINILIBX_PATH} && ${MAKE})
+	@(cd ${MINILIBX_PATH} && ${MAKE}) 2>/dev/null
 	@cp ${MINILIBX_PATH}/${MINILIBX} .
 
 clean: 
