@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/25 16:08:57 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:06:34 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ Function to lighten the player's moves
 void	ft_making_the_move(t_map *map_ptr)
 {
 	map_ptr->count_moves++;
-	printf("You have made: %d moves!\n", map_ptr->count_moves);
+	ft_printf("You have made: %d moves!\n", map_ptr->count_moves);
 	ft_draw_map(map_ptr);
 }

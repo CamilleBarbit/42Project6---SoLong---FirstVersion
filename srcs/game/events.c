@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:19:59 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/24 15:00:36 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:06:21 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Closing all images + Closing window
 int	ft_exit_game(t_map *map_ptr)
 {
 	ft_free_game(map_ptr);
-	printf("Thank you for playing! Come back soon!");
+	ft_printf("Thank you for playing! Come back soon!\n");
 	ft_dealloc(map_ptr);
 	exit (1);
 }
@@ -45,7 +45,7 @@ int	ft_handle_key(int keycode, t_map *map_ptr)
 	else if (keycode == ESC)
 		ft_exit_game(map_ptr);
 	else
-		printf("Error\nCould not move the character!\n");
+		ft_printf("Error\nCould not move the character!\n");
 	return (0);
 }
 

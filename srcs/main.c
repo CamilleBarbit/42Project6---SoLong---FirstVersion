@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:34:16 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 17:58:48 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:05:52 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_filler_basics(t_map *map_ptr, char *str)
 	map_ptr->file_name = ft_sdup(str);
 	map_ptr->map_size = ft_recup_map_size(map_ptr->file_name);
 	if (map_ptr->map_size == -1)
-		return (printf("Error\nEmpty file!\n"), 1);
+		return (ft_printf("Error\nEmpty file!\n"), 1);
 	map_ptr->map_tab = ft_recup_map(map_ptr);
 	map_ptr->size_x = ft_len(map_ptr->map_tab[0]) - 1;
 	ft_strcpy(map_ptr->map_title, "so_long");
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	{
 		map_ptr = malloc(sizeof(t_map));
 		if (!map_ptr)
-			return (printf("Error\nFailed to allocate memory\n!"), 1);
+			return (ft_printf("Error\nFailed to allocate memory\n!"), 1);
 		if (ft_check_all_errors_file_name(argv[1]) == 1)
 			return (free(map_ptr), 1);
 		if (ft_filler_basics(map_ptr, argv[1]) == 1)
@@ -64,6 +64,6 @@ int	main(int argc, char **argv)
 		ft_dealloc(map_ptr);
 	}
 	else
-		printf("Error\nMissing a <map>.ber as second argument!\n");
+		ft_printf("Error\nMissing a <map>.ber as second argument!\n");
 	return (0);
 }

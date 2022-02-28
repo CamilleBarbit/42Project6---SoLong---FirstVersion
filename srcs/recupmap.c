@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:36:01 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/23 17:57:07 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:05:28 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_recup_map_size(char *file_name)
 	free(line);
 	close (fd);
 	if (total_nb_line < 3)
-		return (printf("Error\nProblem with the number of lines\n"), -1);
+		return (ft_printf("Error\nProblem with the number of lines!\n"), -1);
 	return (total_nb_line);
 }
 
