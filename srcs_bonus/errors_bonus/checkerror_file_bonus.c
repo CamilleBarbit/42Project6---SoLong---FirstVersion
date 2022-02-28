@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkerror_file.c                                  :+:      :+:    :+:   */
+/*   checkerror_file_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:44:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/25 15:48:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:16:31 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Function to check file (2nd argument)
 int	ft_check_file_name(char *file_name, int j, char *str, int count)
 {
 	if (--j < 4)
-		return (printf("Error\nFile name is not long enough!\n"), 1);
+		return (ft_printf("Error\nFile name is not long enough!\n"), 1);
 	while (j >= 0 && file_name[j] != '/')
 	{
 		if (file_name[j] == '.')
@@ -27,10 +27,10 @@ int	ft_check_file_name(char *file_name, int j, char *str, int count)
 		j--;
 	}
 	if (count > 1)
-		return (printf("Error\nFile name has too many points!\n"), 1);
+		return (ft_printf("Error\nFile name has too many points!\n"), 1);
 	j++;
 	if (file_name[j] == '.')
-		return (printf("Error\nFile is not long enough!\n"), 1);
+		return (ft_printf("Error\nFile is not long enough!\n"), 1);
 	while (file_name[j])
 	{
 		if (file_name[j] == '.')
@@ -40,7 +40,7 @@ int	ft_check_file_name(char *file_name, int j, char *str, int count)
 		}
 		j++;
 	}
-	return (printf("Error\nFile extension is not <.ber>!\n"), 1);
+	return (ft_printf("Error\nFile extension is not <.ber>!\n"), 1);
 }
 
 /*
@@ -53,7 +53,7 @@ int	ft_try_to_open_file(char *file_name)
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-		return (printf("Error\nCould not open file!\n"), 1);
+		return (ft_printf("Error\nCould not open file!\n"), 1);
 	close (fd);
 	return (0);
 }
@@ -76,7 +76,7 @@ int	ft_try_to_open_xpm(void)
 	fd_4 = open(EMPTY_IM, O_RDONLY);
 	fd_5 = open(WALLS_IM, O_RDONLY);
 	if (fd_1 < 0 || fd_2 < 0 || fd_3 < 0 || fd_4 < 0 || fd_5 < 0)
-		return (printf("Error\nCould not open <xpm> file!\n"), 1);
+		return (ft_printf("Error\nCould not open <xpm> file!\n"), 1);
 	close (fd_1);
 	close (fd_2);
 	close (fd_3);

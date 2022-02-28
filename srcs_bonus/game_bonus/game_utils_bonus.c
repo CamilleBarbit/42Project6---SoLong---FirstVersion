@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:46:15 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/25 17:36:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:13:09 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,6 @@ void	ft_making_the_move(t_map *map_ptr)
 	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 1, 10, 0xFFFFFF, str1);
 	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 90, 10, 0xFFFFFF, str2);
 	mlx_string_put(map_ptr->mlx_ptr, map_ptr->mlx_window, 100, 10, 0xFFFFFF, str3);
-	printf("You have made: %d moves!!!!!\n", map_ptr->count_moves);
+	ft_printf("You have made: %d moves!\n", map_ptr->count_moves);
 	free(str2);
 }

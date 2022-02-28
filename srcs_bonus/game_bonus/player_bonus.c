@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:24:05 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/02/25 15:47:45 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:15:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_move_up(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		ft_exit_game(map_ptr);
-		printf("Congratulations, you are done playing! Come back soon!\n");
+		ft_printf("Congratulations, you are done playing! Come back soon!\n");
 	}
 	else if (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] == '0')
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
@@ -39,7 +39,7 @@ void	ft_move_up(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		map_ptr->temp = 1;
-		printf("Please, go collect all items!\n");
+		ft_printf("Please, go collect all items!\n");
 	}
 	ft_making_the_move(map_ptr);
 }
@@ -58,7 +58,7 @@ void	ft_move_left(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		ft_exit_game(map_ptr);
-		printf("Congratulations, you are done playing! Come back soon!\n");
+		ft_printf("Congratulations, you are done playing! Come back soon!\n");
 	}
 	else if (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] == '0')
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
@@ -67,7 +67,7 @@ void	ft_move_left(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		map_ptr->temp = 1;
-		printf("Please, go collect all items!\n");
+		ft_printf("Please, go collect all items!\n");
 	}
 	ft_making_the_move(map_ptr);
 }
@@ -86,7 +86,7 @@ void	ft_move_down(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		ft_exit_game(map_ptr);
-		printf("Congratulations, you are done playing! Come back soon!\n");
+		ft_printf("Congratulations, you are done playing! Come back soon!\n");
 	}
 	else if (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] == '0')
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
@@ -95,7 +95,7 @@ void	ft_move_down(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		map_ptr->temp = 1;
-		printf("Please, go collect all items!\n");
+		ft_printf("Please, go collect all items!\n");
 	}
 	ft_making_the_move(map_ptr);
 }
@@ -114,7 +114,7 @@ void	ft_move_right(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		ft_exit_game(map_ptr);
-		printf("Congratulations, you are done playing!\nCome back soon!\n");
+		ft_printf("Congratulations, you are done playing!\nCome back soon!\n");
 	}
 	else if (map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] == '0')
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
@@ -123,7 +123,7 @@ void	ft_move_right(t_map *map_ptr)
 	{
 		map_ptr->map_tab[map_ptr->player_y][map_ptr->player_x] = 'P';
 		map_ptr->temp = 1;
-		printf("Please, go collect all items!\n");
+		ft_printf("Please, go collect all items!\n");
 	}
 	ft_making_the_move(map_ptr);
 }
